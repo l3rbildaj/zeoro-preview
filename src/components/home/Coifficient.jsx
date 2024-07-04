@@ -279,6 +279,10 @@ export default function Coifficient() {
     return { x: x + offset, y: y + offset };
   };
 
+  const handleRectClick = () => {
+    
+  }
+
   return (
       <div>
       <svg width="616" height="393" viewBox="0 0 616 393" fill="none" xmlns="http://www.w3.org/2000/svg">

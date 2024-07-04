@@ -3,7 +3,7 @@ import Banner from "@/components/home/Banner";
 import HeroSection from "@/components/home/HeroSection";
 import Reasoning from "@/components/home/Reasoning";
 import ShuffleGrid from "@/components/home/ShuffleGrid";
-import Coifficient from "@/components/ui/Coifficient";
+import Coifficient from "@/components/home/Coifficient";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 
 

@@ -13,7 +13,7 @@ const FlickerNumber = React.memo(({ initialNumber, delay }) => {
 
     const loop = async () => {
       while (true) {
-        await controls.start({ opacity: 0.8, transition: { duration: 0.5,ease: 'easeInOut' } });
+        await controls.start({ opacity: 0, transition: { duration: 0.5,ease: 'easeInOut' } });
         toggleNumber();
         await controls.start({ opacity: 1, transition: { duration: 0.5,ease: 'easeInOut' } });
       }
