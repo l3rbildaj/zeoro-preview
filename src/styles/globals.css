@@ -27,13 +27,16 @@
 
 
   
-/* @font-face {
-  font-family: 'Somar';
-  src: url();
+ @font-face {
+  font-family: 'Urbanist';
+  src: url("./font/Urbanist-Bold.woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
+
+
+/*
 
 @font-face {
   font-family: 'SomarBold';
@@ -58,6 +61,6 @@
     overflow-x: clip;
     margin: 0;
     padding: 0;
-    font-family: 'Somar';
-    background-color: white;
+    font-family: 'Urbanist';
+    background-color: black;
   }

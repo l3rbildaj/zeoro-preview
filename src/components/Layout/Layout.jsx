@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
 
 
   return (
-    <div className="min-h-screen mx-auto max-w-[1450px] flex flex-col">
+    <div className="min-h-screen mx-auto max-w-[1550px] flex flex-col">
       {/* <Header  /> */}
       <main className=" box-border">
         {children}
