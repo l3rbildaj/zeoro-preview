@@ -1,15 +1,6 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.01,
-    },
-  },
-};
 
 const letterVariants = {
   hidden: { opacity: 0, y: 50, scale: 1, rotate: -90 },
@@ -27,24 +18,38 @@ const letterVariants = {
 
 
   
-const AnimatedText = memo(({ text }) => {
+const AnimatedText = memo(({ text,className,stagger }) => {
   const words = text.split(' ');
+
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: stagger,
+      },
+    },
+  };
+  
 
   return (
     <motion.div
-      className="flex flex-wrap justify-center mt-10 text-5xl font-extrabold max-w-[700px] mx-auto"
+     aria-label={text}
+      className={className}
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
+      viewport={{once:true}}
     >
       {words.map((word, wordIndex) => (
         <div key={wordIndex} className="flex overflow-hidden">
           {word.split('').map((letter, letterIndex) => (
             <motion.span
               key={letterIndex}
-              className="inline-block  text-white"
+              className="inline-block  "
               variants={letterVariants}
-              whileHover={{ scale: 1.2, color: '#1d4ed8' }}
+              // whileHover={{ scale: 1.2, color: '#1d4ed8' }}
             >
               {letter}
             </motion.span>

@@ -26,6 +26,9 @@ module.exports = {
     // => @media (min-width: 1536px) { ... }
   },
   theme: {
+    fontFamily:{
+       "secondary":"Neat-Chalk"
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

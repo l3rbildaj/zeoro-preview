@@ -13,7 +13,7 @@ function HeroSection() {
           quality={100}
           className=" absolute  -top-60 -left-52 scale-75  object-cover !z-[0] "
         />
-        <h1 className=" text-white text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
+        <h1 className=" text-white font-bold text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
           <span>WE SOLVE THE </span>
           <span className=" flex self-end   items-center gap-3 ">
             <svg

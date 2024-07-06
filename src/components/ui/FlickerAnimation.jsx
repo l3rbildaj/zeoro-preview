@@ -1,34 +1,39 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { createContext, useContext, useState, useEffect, useRef, useCallback } from "react";
+import { motion } from "framer-motion";
 
-const FlickerNumber = React.memo(({ initialNumber, delay }) => {
+// Create a context for the flicker control
+const FlickerContext = createContext();
+
+const FlickerProvider = ({ children }) => {
+  return (
+    <FlickerContext.Provider value={null}>
+      {children}
+    </FlickerContext.Provider>
+  );
+};
+
+const FlickerNumber = React.memo(({ initialNumber }) => {
   const [number, setNumber] = useState(initialNumber);
-  const controls = useAnimation();
   const ref = useRef();
 
+  const toggleNumber = useCallback(() => {
+    setNumber((prev) => (prev === 0 ? 1 : 0));
+  }, []);
+
   useEffect(() => {
-    const toggleNumber = () => {
-      setNumber(prev => (prev === 0 ? 1 : 0));
-    };
-
-    const loop = async () => {
-      while (true) {
-        await controls.start({ opacity: 0, transition: { duration: 0.5,ease: 'easeInOut' } });
+    const flicker = () => {
+      const timeout = Math.random() * 1000 + 50; // Random interval between 500ms and 1500ms
+      setTimeout(() => {
         toggleNumber();
-        await controls.start({ opacity: 1, transition: { duration: 0.5,ease: 'easeInOut' } });
-      }
-    };
-
-    const startAnimation = async () => {
-      await new Promise(resolve => setTimeout(resolve, delay));
-      loop();
+        requestAnimationFrame(flicker);
+      }, timeout);
     };
 
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            startAnimation();
+            requestAnimationFrame(flicker);
             observer.disconnect();
           }
         });
@@ -41,12 +46,11 @@ const FlickerNumber = React.memo(({ initialNumber, delay }) => {
     }
 
     return () => observer.disconnect();
-  }, [controls, delay]);
+  }, [toggleNumber]);
 
   return (
     <motion.div
       className="text-3xl font-bold w-3 text-white mx-1"
-      animate={controls}
       ref={ref}
     >
       {number}
@@ -54,40 +58,35 @@ const FlickerNumber = React.memo(({ initialNumber, delay }) => {
   );
 });
 
-
-FlickerNumber.displayName = "FlickerNumber"
-
-
-
-
-
+FlickerNumber.displayName = "FlickerNumber";
 
 const FlickerAnimation = () => {
-    const lines = 3;
-    const numbersPerLine = 47;
-  
-    const getInitialNumber = (lineIndex, numberIndex) => {
-      if (lineIndex === 1) {
-        return numberIndex % 2 === 0 ? 0 : 1;
-      }
-      return numberIndex % 2 === 0 ? 1 : 0;
-    };
-  
-    return (
-      <div className="flex flex-col items-center justify-center  bg-[#3C3C3C] py-2 px-2 my-20">
+  const lines = 3;
+  const numbersPerLine = 47;
+
+  const getInitialNumber = (lineIndex, numberIndex) => {
+    if (lineIndex === 1) {
+      return numberIndex % 2 === 0 ? 0 : 1;
+    }
+    return numberIndex % 2 === 0 ? 1 : 0;
+  };
+
+  return (
+    <FlickerProvider>
+      <div className="flex flex-col items-center justify-center bg-[#3C3C3C] py-6 px-2 my-20">
         {Array.from({ length: lines }).map((_, lineIndex) => (
           <div key={lineIndex} className="flex gap-3">
             {Array.from({ length: numbersPerLine }).map((_, numberIndex) => (
               <FlickerNumber
                 key={numberIndex}
                 initialNumber={getInitialNumber(lineIndex, numberIndex)}
-                delay={numberIndex * 50} // Delay increases with each number
               />
             ))}
           </div>
         ))}
       </div>
-    );
-  };
-  
-  export default FlickerAnimation;
+    </FlickerProvider>
+  );
+};
+
+export default FlickerAnimation;

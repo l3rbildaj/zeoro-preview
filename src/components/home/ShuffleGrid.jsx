@@ -56,6 +56,7 @@ const data = [
     color: "bg-red-500",
     grid: "col-span-3 row-span-4",
     img: img1,
+    link: "/domain-expansion",
   },
   {
     id: 1,
@@ -63,9 +64,27 @@ const data = [
     grid: "col-span-3 row-span-4",
     img: img2,
   },
-  { id: 2, color: "bg-blue-500", grid: "col-span-1 row-span-1", img: img4 },
-  { id: 3, color: "bg-yellow-500", grid: "col-span-2 row-span-3", img: img3 },
-  { id: 4, color: "bg-gray-500", grid: "col-span-1 row-span-2", img: img5 },
+  {
+    id: 2,
+    color: "bg-blue-500",
+    grid: "col-span-1 row-span-1",
+    img: img4,
+    link: "/leads-forge",
+  },
+  {
+    id: 3,
+    color: "bg-yellow-500",
+    grid: "col-span-2 row-span-3",
+    img: img3,
+    link: "/exe",
+  },
+  {
+    id: 4,
+    color: "bg-gray-500",
+    grid: "col-span-1 row-span-2",
+    img: img5,
+    link: "",
+  },
 ];
 
 import img1 from "@/assets/projects/img1.jpg";
@@ -73,9 +92,13 @@ import img2 from "@/assets/projects/img2.png";
 import img3 from "@/assets/projects/img3.png";
 import img4 from "@/assets/projects/img4.png";
 import img5 from "@/assets/projects/img5.png";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import dynamic from 'next/dynamic';
+// Dynamically import Link and Image to reduce initial bundle size
+const Link = dynamic(() => import('next/link'));
+const Image = dynamic(() => import('next/image'));
+import { useRouter } from "next/router";
+import { useMemo, useRef, useState } from "react";
 
 const ShuffleGrid = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
@@ -83,10 +106,12 @@ const ShuffleGrid = () => {
   const items = useRef(data);
 
   // Calculate reordered items ensuring active item is always at index 0
-  const reorderedItems = [
-    items.current[expandedIndex],
-    ...items.current.filter((item) => item.id !== expandedIndex),
-  ];
+  const reorderedItems = useMemo(() => {
+    return [
+      items.current[expandedIndex],
+      ...items.current.filter((item) => item.id !== expandedIndex),
+    ];
+  }, [expandedIndex]);
 
   const shuffle = () => {
     clicks.current = clicks.current + 1;
@@ -102,10 +127,10 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className=" px-10 ">
-      <div className=" flex items-center justify-between mb-10  ">
-        <h1 className=" uppercase text-4xl pt-10 ">THE EXPERIMENTS</h1>
-        <button className="text-white " onClick={shuffle}>
+    <div className="px-10">
+      <div className="flex items-center justify-between mb-10">
+        <h1 className="uppercase text-4xl pt-10 font-bold">THE EXPERIMENTS</h1>
+        <button className="text-white" onClick={shuffle}>
           <svg
             width="50"
             height="72"
@@ -131,18 +156,20 @@ const ShuffleGrid = () => {
             }}
             layout
             className={`flex items-center justify-center relative w-full h-full ${
-              index === 0 ? "col-span-3 row-span-7" : `${item.grid}`
+              index === 0 ? "col-span-3 row-span-7" : item.grid
             } ${item.color}`}
           >
-            <Image
-              src={item.img}
-              alt=""
-              layout="fill" // Use fill layout to adapt to the container size
-              quality={100} // Set quality to 100 for all images
-              className="object-cover"
-              placeholder="blur" // Enable blur placeholder
-              blurDataURL={""} // Provide blurDataURL if available
-            />
+            <Link href={item.link || ''} key={item.id}>
+              <Image
+                src={item.img}
+                alt=""
+                layout="fill" // Use fill layout to adapt to the container size
+                quality={100} // Set quality to 100 for all images
+                className="object-cover select-none"
+                placeholder="blur" // Enable blur placeholder
+                blurDataURL={""} // Provide blurDataURL if available
+              />
+            </Link>
           </motion.div>
         ))}
       </div>
