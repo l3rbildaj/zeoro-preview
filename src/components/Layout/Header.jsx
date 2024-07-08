@@ -1,27 +1,28 @@
-import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Logo from "./Logo";
+import { motion } from "framer-motion";
 
 
 const Header = () => {
   const ref = useRef(null);
 
   return (
-    <header className="h-15 shadow-sm dark:border-gray-700  w-full">
-      <div className="container px-4 sm:px-6 py-4 flex justify-between items-center mx-auto">
+    <header className="!h-15 z-50 w-full">
+      <div className=" px-4 sm:px-6 py-4 flex justify-between items-start mx-auto">
         <div
           className="flex gap-3 justify-center items-center text-3xl font-bold uppercase "
         >
-          <Image src={"/logo.png"} width={100} height={100} priority draggable="false" className=" select-none h-full w-full" alt="logo" /> 
+          <Logo />
         </div>
-        <div   className="flex gap-4 items-center">
-          <Link
-            ref={ref}
-            className="inline-flex items-center  justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-[#daf50d] text-black hover:bg-[#daf50d]/95 h-10 py-2 px-8"
-            href=""
-          >
-            Contact Us
-          </Link>
+        <div className="flex h-15 relative flex-col text-white/50 gap-1 items-end">
+          <div className="gap-1 items-end flex flex-col absolute">
+
+            <AnimatedLink title={'REASONING'} url={'/'} />
+            <AnimatedLink title={'EXPERIMENTS'} url={'/'} />
+            <AnimatedLink title={'COEFFICIENTS'} url={'/'} />
+            <AnimatedLink title={'LET’S SOLVE'} url={'/'} />
+          </div>
         </div>
       </div>
     </header>
@@ -29,3 +30,101 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+
+const titleAnimation = {
+  rest: {
+    transition: {
+      staggerChildren: 0.005,
+    },
+  },
+  hover: {
+    transition: {
+      staggerChildren: 0.005,
+    },
+  },
+};
+
+const letterAnimation = {
+  rest: {
+    y: 0,
+  },
+  hover: {
+    y: -25,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, 0.01, 0.05, 0.95],
+      type: 'tween',
+    },
+  },
+};
+
+const letterAnimationTwo = {
+  rest: {
+    y: 25,
+  },
+  hover: {
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.6, 0.01, 0.05, 0.95],
+      type: 'tween',
+    },
+  },
+};
+
+const AnimatedLink = ({ title, url, className, textsize }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  return (
+    <motion.div
+      className={'relative pointer flex flex-col overflow-hidden ' + className}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <Link href={url}>
+        <AnimatedWord
+          textsize={textsize}
+          title={title}
+          animations={letterAnimation}
+          isHovered={isHovered}
+        />
+        <motion.div className='absolute top-0' >
+          <AnimatedWord
+            textsize={textsize}
+            title={title}
+            animations={letterAnimationTwo}
+            isHovered={isHovered}
+          />
+        </motion.div>
+      </Link>
+    </motion.div>
+  );
+};
+
+
+
+const AnimatedWord = ({
+  title,
+  animations,
+  isHovered,
+  textsize = "1rem"
+}) => (
+  <motion.span className='whitespace-nowrap relative'
+    variants={titleAnimation}
+    initial="rest"
+    animate={isHovered ? 'hover' : 'rest'}
+  >
+    {title.split('').map((char, i) =>
+      char === ' ' ? (
+        <motion.span className={"relative inline-block whitespace-nowrap text-[${ textsize }]"} key={i}>&nbsp;</motion.span>
+      ) : (
+        <motion.span className={"relative inline-block whitespace-nowrap text-[${ textsize }]"} variants={animations} key={i} >
+          {char}
+        </motion.span >
+      )
+    )}
+  </motion.span >
+);

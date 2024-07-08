@@ -14,7 +14,7 @@ function Banner() {
         width={2000}
         height={2000}
         quality={100}
-        className="   object-cover w-full -ml-20   "
+        className="   object-cover w-full -ml-0   "
       />
       <div className=" absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
         <AnimatedButton

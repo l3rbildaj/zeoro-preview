@@ -44,7 +44,7 @@ function Exe() {
           }
           stagger={0.01}
           className={
-            " mt-5 text-2xl flex flex-wrap max-w-[670px]  font-extrabold "
+            " mt-5 text-2xl text-white flex flex-wrap max-w-[670px]  font-extrabold "
           }
         />
       </div>

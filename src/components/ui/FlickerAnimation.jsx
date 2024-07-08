@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
+import React, { createContext, useCallback, useEffect, useRef, useState } from "react";
 
 // Create a context for the flicker control
 const FlickerContext = createContext();
@@ -12,15 +12,20 @@ const FlickerProvider = ({ children }) => {
   );
 };
 
-const FlickerNumber = React.memo(({ initialNumber }) => {
+const FlickerNumber = React.memo(({ initialNumber, stable = false, disapear = false }) => {
   const [number, setNumber] = useState(initialNumber);
   const ref = useRef();
 
   const toggleNumber = useCallback(() => {
-    setNumber((prev) => (prev === 0 ? 1 : 0));
+    stable ? setNumber(1) : setNumber((prev) => (prev === 0 ? 1 : 0));
+    disapear ? setTimeout(() => setNumber(''), 1000) : null
   }, []);
 
   useEffect(() => {
+    if (stable) {
+      setNumber(1);
+      return;
+    }
     const flicker = () => {
       const timeout = Math.random() * 1000 + 50; // Random interval between 500ms and 1500ms
       setTimeout(() => {
@@ -50,10 +55,13 @@ const FlickerNumber = React.memo(({ initialNumber }) => {
 
   return (
     <motion.div
-      className="text-3xl font-bold w-3 text-white mx-1"
+      style={{
+        color: stable ? '#8E6AE0' : 'white'
+      }}
+      className="text-3xl font-bold w-3 mx-1"
       ref={ref}
     >
-      {number}
+      {stable ? 1 : number}
     </motion.div>
   );
 });
@@ -90,3 +98,54 @@ const FlickerAnimation = () => {
 };
 
 export default FlickerAnimation;
+
+
+
+
+
+
+
+export const LoaderFlickerAnimation = ({ finished = false }) => {
+  const lines = 5;
+  const numbersPerLine = 15;
+
+  const getInitialNumber = (lineIndex, numberIndex) => {
+    if (lineIndex === 1) {
+      return numberIndex % 2 === 0 ? 0 : 1;
+    }
+    return numberIndex % 2 === 0 ? 1 : 0;
+  };
+
+  return (
+    <FlickerProvider>
+      <div className="flex flex-col items-center justify-center z-10  py-6 px-2 my-20">
+        {Array.from({ length: lines }).map((_, lineIndex) => finished && lineIndex === 2 ?
+          (<div key={lineIndex} className="flex gap-3">
+            {Array.from({ length: numbersPerLine }).map((_, numberIndex) => numberIndex >= 5 && numberIndex <= 9 ? (
+              <FlickerNumber
+                stable={true}
+                key={numberIndex}
+                initialNumber={getInitialNumber(lineIndex, numberIndex)}
+              />
+            ) :
+              (
+                <FlickerNumber
+                  key={numberIndex}
+                  initialNumber={getInitialNumber(lineIndex, numberIndex)}
+                />
+              ))}
+          </div>
+          )
+          : (<div key={lineIndex} className="flex gap-3">
+            {Array.from({ length: numbersPerLine }).map((_, numberIndex) => (
+              <FlickerNumber
+                key={numberIndex}
+                initialNumber={getInitialNumber(lineIndex, numberIndex)}
+              />
+            ))}
+          </div>
+          ))}
+      </div>
+    </FlickerProvider>
+  );
+}

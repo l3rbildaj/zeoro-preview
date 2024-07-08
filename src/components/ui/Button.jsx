@@ -39,7 +39,7 @@ const AnimatedButton = ({ onMouseEnter, onMouseLeave }) => {
                 key={index}
                 className="absolute h-full w-0.5 bg-white"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: [0, 1, 0] }}
+                animate={{ opacity: [0, .2, 0] }}
                 transition={{
                   repeat: Infinity,
                   duration: 0.5,

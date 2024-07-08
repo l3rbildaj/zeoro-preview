@@ -129,7 +129,7 @@ const ShuffleGrid = () => {
   return (
     <div className="px-10">
       <div className="flex items-center justify-between mb-10">
-        <h1 className="uppercase text-4xl pt-10 font-bold">THE EXPERIMENTS</h1>
+        <h1 className="uppercase text-4xl pt-10 text-white font-bold">THE EXPERIMENTS</h1>
         <button className="text-white" onClick={shuffle}>
           <svg
             width="50"
@@ -155,9 +155,8 @@ const ShuffleGrid = () => {
               damping: 50,
             }}
             layout
-            className={`flex items-center justify-center relative w-full h-full ${
-              index === 0 ? "col-span-3 row-span-7" : item.grid
-            } ${item.color}`}
+            className={`flex items-center justify-center relative w-full h-full ${index === 0 ? "col-span-3 row-span-7" : item.grid
+              } ${item.color}`}
           >
             <Link href={item.link || ''} key={item.id}>
               <Image
