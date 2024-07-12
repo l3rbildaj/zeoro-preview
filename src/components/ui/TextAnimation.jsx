@@ -18,7 +18,8 @@ const letterVariants = {
 
 
 
-const AnimatedText = memo(({ text, className, stagger, delay = 0 }) => {
+const 
+AnimatedText = memo(({ text, className, stagger, delay = 0 }) => {
   const words = text.split(' ');
 
 

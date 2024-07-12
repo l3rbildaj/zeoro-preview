@@ -3,25 +3,18 @@ import { useState } from "react";
 
 const lines = Array(30).fill(0); // Adjust the number of lines as needed
 
-const AnimatedButton = ({ onMouseEnter, onMouseLeave }) => {
+const AnimatedButton = ({text="SEND US YOUR EQUATION"}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.button
-      className="relative font-bold overflow-hidden px-6 py-3 text-white border-4 mb-10 uppercase bg-black rounded-lg"
+      className="relative font-bold overflow-hidden px-10 py-4 text-white border-4 mb-10 uppercase bg-black rounded-lg"
       whileHover={{
         scale: 1.1,
         borderColor: "#00ffff",
         boxShadow: "0 0 10px #00ffff",
       }}
-      onMouseEnter={() => {
-        setIsHovered(true);
-        onMouseEnter();
-      }}
-      onMouseLeave={() => {
-        setIsHovered(false);
-        onMouseLeave();
-      }}
+     
       style={{ borderColor: "#22505D", transition: "all 0.3s ease" }}
     >
       {isHovered && (
@@ -51,7 +44,7 @@ const AnimatedButton = ({ onMouseEnter, onMouseLeave }) => {
           })}
         </div>
       )}
-      SEND US YOUR EQUATION
+      {text}
     </motion.button>
   );
 };

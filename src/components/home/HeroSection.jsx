@@ -7,7 +7,7 @@ import { Canvas } from "@react-three/fiber";
 import dynamic from "next/dynamic";
 
 
-const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
+// const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
 
 function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -40,7 +40,7 @@ function HeroSection() {
     <>
       <motion.div className="absolute w-screen pointer-events-none h-screen top-0 left-0 z-20 ">
         <Canvas className="w-full pointer-events-none h-full">
-          {isLoaded ? <WebglEffect /> : null}
+          {/* {isLoaded ? <WebglEffect /> : null} */}
         </Canvas>
       </motion.div>
       <div className=" relative mt-32 px-10  h-screen">

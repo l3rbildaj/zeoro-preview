@@ -1,38 +1,38 @@
-import img2 from "@/assets/domain/img1.jpg";
-import img3 from "@/assets/domain/img2.png";
-import img4 from "@/assets/domain/img3.jpg";
-import img5 from "@/assets/domain/img4.jpg";
-import img6 from "@/assets/domain/img5.jpg";
-import img7 from "@/assets/domain/img6.jpg";
-import img8 from "@/assets/domain/img7.jpg";
-import img9 from "@/assets/domain/img8.png";
+import img1 from "@/assets/seafena/img1.png";
+import img2 from "@/assets/seafena/img2.png";
+import img3 from "@/assets/seafena/img3.png";
+import img4 from "@/assets/seafena/img4.png";
+import img5 from "@/assets/seafena/img5.png";
+import img6 from "@/assets/seafena/img6.png";
+import img7 from "@/assets/seafena/img7.png";
 import RevealImage from "@/components/ui/RevealImg";
 import AnimatedText from "@/components/ui/TextAnimation";
 import { motion } from "framer-motion";
 
-import client_img from "@/assets/exe/client_img.png";
+import client_img from "@/assets/seafena/client_img.png";
 import profile_pic from "@/assets/exe/profile__pic.png";
-import Banner from "@/components/ui/Banner";
 import ClietReview from "@/components/ui/ClientReview";
+import Banner from "@/components/ui/Banner";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
 
-function Exe() {
+
+function Seafena() {
   return (
     <Layout>
       <div className=" px-5 md:px-10 ">
         <div className=" flex text-white items-end ">
           <AnimatedText
-            text={"OPERATIONS"}
-            stagger={0.08}
+            text={"SEAFENA"}
+            stagger={0.2}
             className={" mt-20 md:mt-10 text-6xl md:text-7xl font-extrabold "}
           />
           <motion.span
             initial={{ opacity: 0, translateY: 10 }}
             animate={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 1, ease: "easeIn" }}
-            viewport={{ once: true }}
+            viewport={{once:true}}
             className=" hidden md:flex mb-2 text-sm md:text-base "
           >
             Case <br />
@@ -41,14 +41,14 @@ function Exe() {
         </div>
         <AnimatedText
           text={
-            "Deep Calculus Dive into some of our most recent brand identity and strategy projects."
+            "A Voyage of Branding and Experience The Essence of Nautical Excellence"
           }
           stagger={0.01}
           className={
-            " mt-5  text-xl sm:text-2xl flex flex-wrap max-w-[600px]  font-extrabold "
+            " mt-5 text-xl sm:text-2xl text-white flex flex-wrap max-w-[500px]  font-extrabold "
           }
         />
-        <div className=" flex gap-10 mt-5 ">
+         <div className=" flex gap-10 mt-5 ">
           {["Brand Design", "Web Crafting"].map((e, i) => (
             <motion.div
               initial={{ opacity: 0, translateY: 100 }}
@@ -82,13 +82,13 @@ function Exe() {
         </div>
       </div>
       <RevealImage
-       classNameImg={" lg:h-screen object-cover"}
-        className="w-full lg:h-screen relative my-20 overflow-hidden"
-        src={img2}
+      
+        className="w-full h-full relative my-20 overflow-hidden"
+        src={img1}
       />
-      <div className="  px-5 md:px-10  my-36 flex flex-col lg:flex-row gap-0 lg:justify-center text-white lg:items-center ">
+      <div className=" px-5 md:px-10  my-36 flex flex-col lg:flex-row gap-0 lg:justify-center text-white lg:items-center ">
         <AnimatedText
-          text={"BRANDING EQUATIONS"}
+          text={"SEAFENA EQUATIONS"}
           stagger={0.05}
           className={
             " mt-5 text-5xl xs:text-6xl md:text-7xl flex flex-wrap max-w-[500px]  font-extrabold "
@@ -96,82 +96,73 @@ function Exe() {
         />
         <AnimatedText
           text={
-            "“Pony really understood what we were trying achieve and was very flexible and responsive. They challenged our thinking and took some smart risk in the design which turned out to be great. I would highly recommd them and it's great that we cann say they added value.”"
+            "“Seafena is an invitation to the extraordinary, a passage through luxury and tranquility crafted within each sea voyage. Here, each moment unfolds into a story rich with meticulous detail, from the polished decks of our state-of-the-art vessels to the personalized care in our service.”"
           }
           stagger={0.01}
           className={
-            " mt-5 text-xl sm:text-2xl flex flex-wrap max-w-[500px]  "
+            " mt-5 text-xl sm:text-2xl flex flex-wrap max-w-[500px] "
           }
         />
       </div>
       <RevealImage
-        className=" hidden md:flex w-full relative my-20 overflow-hidden"
-        src={img3}
+        className="w-full  relative my-20 overflow-hidden"
+        classNameImg=" h-[400px] md:h-full object-right object-cover  "
+        src={img2}
       />
-      <RevealImage
-        className=" flex md:hidden w-full relative my-20 overflow-hidden"
-        src={img9}
-      />
-      <div className=" grid grid-cols-1 md:grid-cols-2  gap-8 md:gap-14  mt-36 ">
-        <RevealImage className="w-full  relative  overflow-hidden" src={img4} />
-        <RevealImage className="w-full  relative overflow-hidden" src={img5} />
-        <RevealImage className="w-full  relative  overflow-hidden" src={img6} />
-        <RevealImage className="w-full  relative  overflow-hidden" src={img7} />
+      <div className=" grid  grid-cols-1 md:grid-cols-2 gap-8 md:gap-14  mt-36 ">
+        <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img3} />
+        <RevealImage className="w-full  relative overflow-hidden bg-white/20" src={img4} />
+        <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img5} />
+        <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img6} />
       </div>
       <RevealImage
-        className="w-full h-full relative overflow-hidden mt-20 "
-        src={img8}
+        className="w-full h-full relative overflow-hidden mt-32 "
+        src={img7}
       />
       <ClietReview
         span={"Happy Client"}
         img={client_img}
-        name={"Bachir RZAMA"}
-        textcolor={" white "}
+        name={"salah moutaouakil"}
+        textcolor={" text-white "}
         review={
-          "“I'm proud to showcase a series of recent branding projects that we passionately brought to life. Each project was approached with a deep understanding of our clients' unique objectives. From crafting compelling visual identities to designing cohesive brand systems, we ensured that every element resonated authentically with our clients' target audiences.”"
+          "“As CEO, I see our path much like navigating the vast ocean, constantly adjusting to the winds of market trends and technological shifts. Our collaboration with Zoero has been pivotal in developing our innovative digital product, blending their tech prowess with our industry insights to forge ahead into new waters of opportunity and growth.”"
         }
       />
       <Banner />
       <FlickerAnimation />
-      <div className=" px-5 md:px-10 max-w-[1000px]  my-20 ">
+      <div className=" px-5 md:px-10 max-w-[1000px]   my-20 ">
         <AnimatedText
-          text={
-            "In math, we find certainty among variables. Zoero applies this principle to navigate complex business landscapes."
-          }
+          text={"In math, we find certainty among variables. Zoero applies this principle to navigate complex business landscapes."}
           stagger={0.01}
-          className={
-            " mt-10 text-xl !leading-[2.3] py-10 flex flex-wrap font-secondary  mx-auto !text-white  "
-          }
+          className={" mt-10 text-xs md:text-lg  lg:text-xl  !leading-[2.3] py-10 flex flex-wrap font-secondary   mx-auto !text-white  "}
         />
-        <motion.div
-          initial={{ opacity: 0, translateY: 50 }}
-          whileInView={{ opacity: 1, translateY: 0 }}
-          transition={{ duration: 1, ease: "easeIn" }}
-          viewport={{ once: true }}
-          className=" flex items-center gap-3  "
-        >
-          <Image
-            src={profile_pic}
-            alt="client_img"
-            width={3000}
-            height={3000}
-            quality={100}
-            className=" h-12 w-12 sm:w-16 sm:h-16 object-cover"
-            loading="lazy"
-          />
-          <div>
-            <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
-            <span className=" text-[#595959] capitalize ">
-              Zœro Mathematician{" "}
-            </span>
-          </div>
-        </motion.div>
+    <motion.div
+      initial={{ opacity: 0, translateY: 50 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 1, ease: "easeIn" }}
+      viewport={{once:true}}
+      className=" flex items-center gap-3  "
+    >
+      <Image
+        src={profile_pic}
+        alt="client_img"
+        width={3000}
+        height={3000}
+        quality={100}
+        className=" h-12 w-12 sm:w-16 sm:h-16 object-cover"
+        loading="lazy"
+      />
+      <div>
+        <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
+        <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
       </div>
+    </motion.div>
+  </div>
     </Layout>
   );
 }
 
-export default Exe;
+export default Seafena;
 
 export async function getStaticProps({ locale }) {
   return {
@@ -181,3 +172,4 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+
