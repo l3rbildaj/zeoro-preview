@@ -12,11 +12,11 @@ import { motion } from "framer-motion";
 
 import client_img from "@/assets/exe/client_img.png";
 import profile_pic from "@/assets/exe/profile__pic.png";
-import Layout from "@/components/Layout/Layout";
 import Banner from "@/components/ui/Banner";
 import ClietReview from "@/components/ui/ClientReview";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import Image from "next/image";
+import Layout from "@/components/Layout/Layout";
 
 function Exe() {
   return (
@@ -54,7 +54,7 @@ function Exe() {
               initial={{ opacity: 0, translateY: 100 }}
               whileInView={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration:0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               key={i}
               className=" flex gap-2 items-center "
             >

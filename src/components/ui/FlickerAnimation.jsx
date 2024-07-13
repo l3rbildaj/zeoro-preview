@@ -149,3 +149,33 @@ export const LoaderFlickerAnimation = ({ finished = false }) => {
     </FlickerProvider>
   );
 }
+
+
+export const MedalFlickerAnimation = () => {
+  const lines = 8;
+  const numbersPerLine = 6;
+
+  const getInitialNumber = (lineIndex, numberIndex) => {
+    if (lineIndex === 1) {
+      return numberIndex % 2 === 0 ? 0 : 1;
+    }
+    return numberIndex % 2 === 0 ? 1 : 0;
+  };
+
+  return (
+    <FlickerProvider>
+      <div className="flex flex-col items-center justify-center z-10   h-full">
+        {Array.from({ length: lines }).map((_, lineIndex) => (
+          <div key={lineIndex} className="flex gap-3">
+            {Array.from({ length: numbersPerLine }).map((_, numberIndex) => (
+              <FlickerNumber
+                key={numberIndex}
+                initialNumber={getInitialNumber(lineIndex, numberIndex)}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    </FlickerProvider >
+  );
+}

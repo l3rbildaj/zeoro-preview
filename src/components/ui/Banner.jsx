@@ -16,7 +16,7 @@ function Banner({text}) {
         quality={100}
         className="   object-cover w-full -ml-0   "
       />
-      <div className=" absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+      <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] ">
         <AnimatedButton
           text={text}
           onMouseEnter={() => setIsHovered(true)}

@@ -127,10 +127,10 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="px-10">
+    <div className="px-10 z-50">
       <div className="flex items-center justify-between mb-10">
         <h1 className="uppercase text-4xl pt-10 text-white font-bold">THE EXPERIMENTS</h1>
-        <button className="text-white" onClick={shuffle}>
+        <button className="text-white z-50" onClick={shuffle}>
           <svg
             width="50"
             height="72"
@@ -145,7 +145,7 @@ const ShuffleGrid = () => {
           </svg>
         </button>
       </div>
-      <div className="grid grid-cols-6 grid-rows-7 gap-2 h-[600px]">
+      <div className="grid grid-cols-6 grid-rows-7 z-50 gap-2 h-[600px]">
         {reorderedItems.map((item, index) => (
           <motion.div
             key={item.id}
@@ -164,7 +164,7 @@ const ShuffleGrid = () => {
                 alt=""
                 layout="fill" // Use fill layout to adapt to the container size
                 quality={100} // Set quality to 100 for all images
-                className="object-cover select-none"
+                className="object-cover z-50 select-none"
                 placeholder="blur" // Enable blur placeholder
                 blurDataURL={""} // Provide blurDataURL if available
               />

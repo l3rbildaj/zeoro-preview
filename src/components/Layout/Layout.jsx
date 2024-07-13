@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Header from "./Header";
 import Loader from "./Loader";
+import Footer from "./Footer";
 
 
 const Layout = ({ children }) => {
@@ -23,7 +24,7 @@ const Layout = ({ children }) => {
           <main className=" box-border bg-black">
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
         </motion.div>
       )}
   </AnimatePresence>
