@@ -7,7 +7,7 @@ import { MedalFlickerAnimation } from "../ui/FlickerAnimation";
 export default function Medals() {
     const sectionRef = useRef(null)
     return (
-        <div className="flex flex-col  justify-start py-10 px-5 gap-10">
+        <div className="flex flex-col  justify-start py-10 px-5 md:px-10 gap-10">
             <h2 ref={sectionRef} className="text-4xl font-bold">FIELDS MEDALS</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 px-10 justify-center items-center">

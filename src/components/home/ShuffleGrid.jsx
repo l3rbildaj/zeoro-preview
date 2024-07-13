@@ -156,7 +156,7 @@ const ShuffleGrid = () => {
             }}
             layout
             className={`flex items-center justify-center relative w-full h-full ${index === 0 ? "col-span-3 row-span-7" : item.grid
-              } ${item.color}`}
+              }`}
           >
             <Link href={item.link || ''} key={item.id}>
               <Image

@@ -130,7 +130,7 @@ const data = [
     return (
       <div className="px-5 md:px-10 mt-20">
         <div className="flex items-center justify-between mb-10">
-          <h1 className="uppercase text-2xl md:text-4xl text-white font-bold">
+          <h1 className="uppercase text-4xl text-white font-bold">
             THE EXPERIMENTS
           </h1>
           <button className="text-white" onClick={shuffle}>
