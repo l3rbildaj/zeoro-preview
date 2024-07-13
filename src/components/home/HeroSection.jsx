@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 
-const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
+// const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
 
 function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);

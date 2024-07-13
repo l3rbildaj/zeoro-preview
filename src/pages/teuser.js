@@ -1,31 +1,30 @@
-import img2 from "@/assets/domain/img1.jpg";
-import img3 from "@/assets/domain/img2.png";
-import img4 from "@/assets/domain/img3.jpg";
-import img5 from "@/assets/domain/img4.jpg";
-import img6 from "@/assets/domain/img5.jpg";
-import img7 from "@/assets/domain/img6.jpg";
-import img8 from "@/assets/domain/img7.jpg";
-import img9 from "@/assets/domain/img8.png";
+import img1 from "@/assets/teuser/img1.png";
+import img2 from "@/assets/teuser/img2.png";
+import img3 from "@/assets/teuser/img3.png";
+import img4 from "@/assets/teuser/img4.png";
+import img5 from "@/assets/teuser/img5.png";
+import img6 from "@/assets/teuser/img6.png";
+import img7 from "@/assets/teuser/img7.png";
 import RevealImage from "@/components/ui/RevealImg";
 import AnimatedText from "@/components/ui/TextAnimation";
 import { motion } from "framer-motion";
 
-import client_img from "@/assets/exe/client_img.png";
 import profile_pic from "@/assets/exe/profile__pic.png";
+import client_img from "@/assets/seafena/client_img.png";
+import Layout from "@/components/Layout/Layout";
 import Banner from "@/components/ui/Banner";
 import ClietReview from "@/components/ui/ClientReview";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import Image from "next/image";
-import Layout from "@/components/Layout/Layout";
 
-function Exe() {
+function Seafena() {
   return (
     <Layout>
       <div className=" px-5 md:px-10 ">
         <div className=" flex text-white items-end ">
           <AnimatedText
-            text={"OPERATIONS"}
-            stagger={0.08}
+            text={"TEUSER"}
+            stagger={0.2}
             className={" mt-20 md:mt-10 text-6xl md:text-7xl font-extrabold "}
           />
           <motion.span
@@ -45,7 +44,7 @@ function Exe() {
           }
           stagger={0.01}
           className={
-            " mt-5  text-xl sm:text-2xl flex flex-wrap max-w-[600px]  font-extrabold "
+            " mt-5 text-xl sm:text-2xl text-white sm:text-[#FF0000] flex flex-wrap max-w-[670px]  font-extrabold "
           }
         />
         <div className=" flex gap-10 mt-5 ">
@@ -54,7 +53,7 @@ function Exe() {
               initial={{ opacity: 0, translateY: 100 }}
               whileInView={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration:0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               key={i}
               className=" flex gap-2 items-center "
             >
@@ -82,53 +81,65 @@ function Exe() {
         </div>
       </div>
       <RevealImage
-       classNameImg={" lg:h-screen object-cover"}
-        className="w-full lg:h-screen relative my-20 overflow-hidden"
-        src={img2}
+        classNameImg={" lg:h-screen object-cover"}
+        className="w-full h-full  object-center relative my-20 overflow-hidden"
+        src={img1}
       />
-      <div className="  px-5 md:px-10  my-36 flex flex-col lg:flex-row gap-0 lg:justify-center text-white lg:items-center ">
+      <div className=" px-5 md:px-10  my-36 flex flex-col lg:flex-row gap-0 lg:justify-center text-white lg:items-center ">
         <AnimatedText
-          text={"BRANDING EQUATIONS"}
+          text={"TEUSER EQUATIONS"}
           stagger={0.05}
           className={
-            " mt-5 text-5xl xs:text-6xl md:text-7xl flex flex-wrap max-w-[500px]  font-extrabold "
+            "  mt-5 text-5xl xs:text-6xl md:text-7xl flex flex-wrap max-w-[500px]  font-extrabold "
           }
         />
         <AnimatedText
           text={
-            "“Pony really understood what we were trying achieve and was very flexible and responsive. They challenged our thinking and took some smart risk in the design which turned out to be great. I would highly recommd them and it's great that we cann say they added value.”"
+            "“Pony really understood what we were trying achieve and was very flexible and responsive. They challenged our thinking and took some smart risk in the design which turned out to be great. I would highly recomm dthem and it's great that we cann say they added value.”"
           }
           stagger={0.01}
           className={
-            " mt-5 text-xl sm:text-2xl flex flex-wrap max-w-[500px]  "
+            "  mt-5 text-xl sm:text-2xl flex text-white sm:text-[#FF0000] flex-wrap max-w-[500px] "
           }
         />
       </div>
       <RevealImage
-        className=" hidden md:flex w-full relative my-20 overflow-hidden"
-        src={img3}
+        className="w-full hidden sm:flex relative my-20 overflow-hidden"
+        src={img2}
       />
       <RevealImage
-        className=" flex md:hidden w-full relative my-20 overflow-hidden"
-        src={img9}
+        className="w-full flex sm:hidden relative my-20 overflow-hidden"
+        src={img7}
       />
       <div className=" grid grid-cols-1 md:grid-cols-2  gap-8 md:gap-14  mt-36 ">
-        <RevealImage className="w-full  relative  overflow-hidden" src={img4} />
-        <RevealImage className="w-full  relative overflow-hidden" src={img5} />
-        <RevealImage className="w-full  relative  overflow-hidden" src={img6} />
-        <RevealImage className="w-full  relative  overflow-hidden" src={img7} />
+        <div className=" flex items-center justify-center text-white sm:text-[#FF0000] mb-10 md:mb-0 text-6xl md:text-5xl lg:text-7xl font-semibold md:text-center px-5 ">
+          WE SOLVE EQUATIONS
+        </div>
+        <RevealImage
+          className="w-full  relative  overflow-hidden bg-white/20"
+          src={img3}
+        />
+        <RevealImage
+          className="w-full  relative overflow-hidden bg-white/20"
+          src={img4}
+        />
+        <RevealImage
+          className="w-full  relative  overflow-hidden bg-white/20"
+          src={img5}
+        />
+        {/* <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img6} /> */}
       </div>
       <RevealImage
-        className="w-full h-full relative overflow-hidden mt-20 "
-        src={img8}
+        className="w-full h-full relative overflow-hidden mt-32 "
+        src={img6}
       />
       <ClietReview
         span={"Happy Client"}
         img={client_img}
-        name={"Bachir RZAMA"}
-        textcolor={" white "}
+        name={"salah moutaouakil"}
+        textcolor={" text-white "}
         review={
-          "“I'm proud to showcase a series of recent branding projects that we passionately brought to life. Each project was approached with a deep understanding of our clients' unique objectives. From crafting compelling visual identities to designing cohesive brand systems, we ensured that every element resonated authentically with our clients' target audiences.”"
+          "“As CEO, I see our path much like navigating the vast ocean, constantly adjusting to the winds of market trends and technological shifts. Our collaboration with Zoero has been pivotal in developing our innovative digital product, blending their tech prowess with our industry insights to forge ahead into new waters of opportunity and growth.”"
         }
       />
       <Banner />
@@ -140,7 +151,7 @@ function Exe() {
           }
           stagger={0.01}
           className={
-            " mt-10 text-xl !leading-[2.3] py-10 flex flex-wrap font-secondary  mx-auto !text-white  "
+            " mt-10 text-xs md:text-lg  lg:text-xl  !leading-[2.3] py-10 flex flex-wrap font-secondary   mx-auto !text-white  "
           }
         />
         <motion.div
@@ -156,11 +167,13 @@ function Exe() {
             width={3000}
             height={3000}
             quality={100}
-            className=" h-12 w-12 sm:w-16 sm:h-16 object-cover"
+            className="  h-12 w-12 sm:w-16 sm:h-16 object-cover"
             loading="lazy"
           />
           <div>
-            <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
+            <h2 className=" text-white font-secondary text-xs md:text-base ">
+              Zakaria Ambari
+            </h2>
             <span className=" text-[#595959] capitalize ">
               Zœro Mathematician{" "}
             </span>
@@ -171,7 +184,7 @@ function Exe() {
   );
 }
 
-export default Exe;
+export default Seafena;
 
 export async function getStaticProps({ locale }) {
   return {

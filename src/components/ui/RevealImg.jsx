@@ -9,7 +9,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 
 
-const RevealImage = ({ className, src }) => {
+const RevealImage = ({ className, src , classNameImg=" h-full object-cover " }) => {
     const controlsLeft = useAnimation();
     const controlsRight = useAnimation();
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -53,7 +53,7 @@ const RevealImage = ({ className, src }) => {
           width={3000}
           height={3000}
           quality={100}
-          className=" w-full h-full object-cover  "
+          className={" w-full " + classNameImg}
           // placeholder="blur"
           // blurDataURL=""
           loading="lazy"

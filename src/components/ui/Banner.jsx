@@ -3,7 +3,7 @@ import Image from "next/image";
 import AnimatedButton from "./Button";
 import { useState } from "react";
 
-function Banner() {
+function Banner({text}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -18,6 +18,7 @@ function Banner() {
       />
       <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] ">
         <AnimatedButton
+          text={text}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         />
