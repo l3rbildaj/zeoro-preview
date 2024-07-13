@@ -16,7 +16,7 @@ const Header = () => {
           <Logo />
         </div>
         <div className="flex h-15 relative flex-col text-white/50 gap-1 items-end">
-          <div className="gap-1 items-end flex flex-col absolute">
+          <div className="gap-1 items-end flex text-xs flex-col absolute">
 
             <AnimatedLink title={'REASONING'} url={'/'} />
             <AnimatedLink title={'EXPERIMENTS'} url={'/'} />
@@ -91,7 +91,7 @@ const AnimatedLink = ({ title, url, className, textsize }) => {
           animations={letterAnimation}
           isHovered={isHovered}
         />
-        <motion.div className='absolute top-0' >
+        <motion.div className='absolute text-white top-0' >
           <AnimatedWord
             textsize={textsize}
             title={title}
@@ -104,7 +104,7 @@ const AnimatedLink = ({ title, url, className, textsize }) => {
   );
 };
 
-
+export { AnimatedLink };
 
 const AnimatedWord = ({
   title,

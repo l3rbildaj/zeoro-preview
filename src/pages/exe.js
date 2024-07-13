@@ -15,11 +15,12 @@ import ClietReview from "@/components/ui/ClientReview";
 import Banner from "@/components/ui/Banner";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import Image from "next/image";
+import Layout from "@/components/Layout/Layout";
 
 
 function Exe() {
   return (
-    <>
+    <Layout>
       <div className=" px-10 ">
         <div className=" flex text-white items-end ">
           <AnimatedText
@@ -31,7 +32,7 @@ function Exe() {
             initial={{ opacity: 0, translateY: 10 }}
             animate={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 1, ease: "easeIn" }}
-            viewport={{once:true}}
+            viewport={{ once: true }}
             className=" mb-2 "
           >
             Case <br />
@@ -101,29 +102,29 @@ function Exe() {
           stagger={0.01}
           className={" mt-10 text-xl leading-[2.3] py-10 flex flex-wrap font-secondary  mx-auto !text-white  "}
         />
-    <motion.div
-      initial={{ opacity: 0, translateY: 50 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 1, ease: "easeIn" }}
-      viewport={{once:true}}
-      className=" flex items-center gap-3  "
-    >
-      <Image
-        src={profile_pic}
-        alt="client_img"
-        width={3000}
-        height={3000}
-        quality={100}
-        className=" w-16 h-16 object-cover"
-        loading="lazy"
-      />
-      <div>
-        <h2 className=" text-white font-secondary ">Zakaria Ambari</h2>
-        <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
+        <motion.div
+          initial={{ opacity: 0, translateY: 50 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 1, ease: "easeIn" }}
+          viewport={{ once: true }}
+          className=" flex items-center gap-3  "
+        >
+          <Image
+            src={profile_pic}
+            alt="client_img"
+            width={3000}
+            height={3000}
+            quality={100}
+            className=" w-16 h-16 object-cover"
+            loading="lazy"
+          />
+          <div>
+            <h2 className=" text-white font-secondary ">Zakaria Ambari</h2>
+            <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
+          </div>
+        </motion.div>
       </div>
-    </motion.div>
-  </div>
-    </>
+    </Layout>
   );
 }
 

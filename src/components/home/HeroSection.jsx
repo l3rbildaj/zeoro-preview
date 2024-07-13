@@ -5,12 +5,14 @@ import AnimatedText from "../ui/TextAnimation";
 import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import dynamic from "next/dynamic";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 
 const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
 
 function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     // Function to check if everything is loaded
@@ -38,12 +40,12 @@ function HeroSection() {
   }, []);
   return (
     <>
-      <motion.div className="absolute w-screen pointer-events-none h-screen top-0 left-0 z-20 ">
+      <motion.div className="fixed w-screen pointer-events-none  md:h-screen top-0 left-0 z-10 ">
         <Canvas className="w-full pointer-events-none h-full">
-          {isLoaded ? <WebglEffect /> : null}
+          {isLoaded && !isMobile ? <WebglEffect /> : null}
         </Canvas>
       </motion.div>
-      <div className=" relative mt-32 px-10  h-screen">
+      <div className=" relative mt-32 px-10 flex flex-col justify-center items-center h-[50vh] gap-20 md:h-screen">
         <motion.div
           animate={{
             translateX: -40,
@@ -53,7 +55,7 @@ function HeroSection() {
           }}
 
 
-          className=" absolute  -top-[50vh] -left-40   object-cover !z-[0]">
+          className=" absolute  md:-top-[50vh] md:-left-40  hidden md:block  object-cover !z-[0]">
           <div className="w-full h-full relative">
             <motion.div initial={{
               left: '0',
@@ -77,7 +79,7 @@ function HeroSection() {
             />
           </div>
         </motion.div>
-        <h1 className=" text-white pointer-events-none font-bold text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
+        <h1 className=" text-white pointer-events-none font-bold text-4xl md:text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
           <span><AnimatedText
             text={"WE SOLVE THE"}
             stagger={0.05}
@@ -98,7 +100,7 @@ function HeroSection() {
               width="57"
               height="79"
               viewBox="0 0 57 79"
-              className=' '
+              className=' w-5 md:w-auto  '
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -113,13 +115,21 @@ function HeroSection() {
               className={" flex flex-row "}
             />
           </span>
-          <span className=" pl-20 "><AnimatedText
+          <span className=" pl-0 lg:pl-20 "><AnimatedText
             text={"EQUATIONS"}
             delay={1}
             stagger={0.05}
             className={" flex flex-row "}
           /></span>
         </h1>
+        <div className="flex flex-col justify-center items-center gap-2">
+          <p className="text-white/20 text-xs">SCROLL DOWN</p>
+          <div className=" h-6 w-[1px] bg-white/30 border-white/50">
+            <motion.div initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} transition={{ repeat: Infinity, repeatType: 'mirror', duration: 1.5, repeatDelay: .2, ease: [0.83, 0, 0.17, 1] }} className="border origin-top  h-6 border-white">
+
+            </motion.div>
+          </div>
+        </div>
       </div>
     </>
   )
