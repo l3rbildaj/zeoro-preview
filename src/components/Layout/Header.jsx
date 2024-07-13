@@ -10,9 +10,7 @@ const Header = () => {
   return (
     <header className="!h-15 z-50 w-full">
       <div className=" px-4 sm:px-6 py-4 flex justify-between items-start mx-auto">
-        <div
-          className="flex gap-3 justify-center items-center text-3xl font-bold uppercase "
-        >
+        <div className="flex gap-3 justify-center items-center text-3xl font-bold uppercase">
           <Logo />
         </div>
         <div className="flex h-15 relative flex-col text-white/50 gap-1 items-end">
