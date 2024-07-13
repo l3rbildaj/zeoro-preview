@@ -12,7 +12,6 @@ import { motion } from "framer-motion";
 
 import client_img from "@/assets/exe/client_img.png";
 import profile_pic from "@/assets/exe/profile__pic.png";
-import Layout from "@/components/Layout/Layout";
 import Banner from "@/components/ui/Banner";
 import ClietReview from "@/components/ui/ClientReview";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";

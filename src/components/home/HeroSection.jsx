@@ -1,14 +1,14 @@
 import img1 from "@/assets/img1.png";
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import AnimatedText from "../ui/TextAnimation";
-import { useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import dynamic from "next/dynamic";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { Canvas } from "@react-three/fiber";
+import { motion } from 'framer-motion';
+import dynamic from "next/dynamic";
+import Image from 'next/image';
+import { useEffect, useState } from "react";
+import AnimatedText from "../ui/TextAnimation";
 
 
-// const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
+const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
 
 function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -45,7 +45,7 @@ function HeroSection() {
           {isLoaded && !isMobile ? <WebglEffect /> : null}
         </Canvas>
       </motion.div>
-      <div className=" relative mt-32 px-10 flex flex-col justify-center items-center h-[50vh] gap-20 md:h-screen">
+      <div className=" relative mt-32 px-10 flex flex-col justify-center items-center md:justify-start h-[50vh] gap-20 md:h-screen">
         <motion.div
           animate={{
             translateX: -40,
