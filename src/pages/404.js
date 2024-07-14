@@ -44,7 +44,7 @@ function FourOFour() {
       >
         No Solution
       </motion.h1>
-      <Banner text={"BACK HOME"} />
+      <Banner text={"BACK HOME"} href="/" />
     </div>
   );
 }

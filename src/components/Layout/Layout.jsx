@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   return <AnimatePresence>
-    {!loading ?
+    { loading ?
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{
         opacity: 0, transition: {
           duration: 10
