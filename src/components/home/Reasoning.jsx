@@ -74,7 +74,7 @@ function Reasoning() {
           text={"THE REASONING"}
           stagger={0.05}
           className={
-            " uppercase  text-3xl md:text-4xl flex flex-wrap max-w-[500px] pt-10 font-bold "
+            " uppercase  text-3xl md:text-4xl flex flex-wrap max-w-[500px] text-white pt-10 font-bold "
           }
         />
         <div className=" flex flex-col md:flex-row justify-start md:justify-center z-20  items-center h-full pb-24 gap-5 md:gap-20 ">

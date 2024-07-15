@@ -13,7 +13,7 @@ export default function Medals() {
           text={"FIELDS MEDALS"}
           stagger={0.05}
           className={
-            " uppercase  text-3xl md:text-4xl flex flex-wrap max-w-[500px] pt-10 font-bold "
+            " uppercase  text-3xl md:text-4xl flex flex-wrap max-w-[500px] pt-10 font-bold text-white "
           }
         />
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 px-10 justify-center items-center">

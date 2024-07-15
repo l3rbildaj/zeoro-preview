@@ -99,6 +99,7 @@ const Link = dynamic(() => import('next/link'));
 const Image = dynamic(() => import('next/image'));
 import { useRouter } from "next/router";
 import { useMemo, useRef, useState } from "react";
+import AnimatedText from "../ui/TextAnimation";
 
 const ShuffleGrid = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
@@ -129,7 +130,13 @@ const ShuffleGrid = () => {
   return (
     <div className="px-10 z-50">
       <div className="flex items-center justify-between mb-10">
-        <h1 className="uppercase text-4xl pt-10 text-white font-bold">THE EXPERIMENTS</h1>
+      <AnimatedText
+          text={"THE EXPERIMENTS"}
+          stagger={0.05}
+          className={
+            " uppercase  text-3xl md:text-4xl flex flex-wrap  text-white  font-bold "
+          }
+        />
         <button className="text-white z-50" onClick={shuffle}>
           <svg
             width="50"
