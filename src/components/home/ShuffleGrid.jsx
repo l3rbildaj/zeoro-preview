@@ -128,9 +128,9 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="px-10 z-50">
+    <div id='experiments' className="px-10 z-50">
       <div className="flex items-center justify-between mb-10">
-      <AnimatedText
+        <AnimatedText
           text={"THE EXPERIMENTS"}
           stagger={0.05}
           className={

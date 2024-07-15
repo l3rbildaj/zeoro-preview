@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 import Logo from "./Logo";
 
 
@@ -18,10 +19,10 @@ const Header = () => {
         <div className="flex h-15 relative flex-col text-white/50 gap-1 items-end">
           <div className="gap-1 items-end flex text-xs flex-col absolute">
 
-            <AnimatedLink title={'REASONING'} url={'/'} />
-            <AnimatedLink title={'EXPERIMENTS'} url={'/'} />
-            <AnimatedLink title={'COEFFICIENTS'} url={'/'} />
-            <AnimatedLink title={'LET’S SOLVE'} url={'/'} />
+            <AnimatedLink title={'REASONING'} scroll url='reasoning' />
+            <AnimatedLink title={'EXPERIMENTS'} scroll url={'experiments'} />
+            <AnimatedLink title={'COEFFICIENTS'} scroll url={'coifficient'} />
+            <AnimatedLink title={'LET’S SOLVE'} url={'/contact'} />
           </div>
         </div>
       </div>
@@ -76,15 +77,20 @@ const letterAnimationTwo = {
   },
 };
 
-const AnimatedLink = ({ title, url, className, textsize }) => {
+const AnimatedLink = ({ title, url, className, textsize, scroll = false }) => {
   const [isHovered, setIsHovered] = useState(false);
-  return (
+  return scroll ?
     <motion.div
-      className={'relative pointer flex flex-col overflow-hidden ' + className}
+      className={'relative pointer cursor-pointer flex flex-col overflow-hidden ' + className}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Link href={url}>
+      <ScrollLink
+        spy={true}
+        smooth={true}
+        offset={50}
+        duration={500}
+        to={url}>
         <AnimatedWord
           textsize={textsize}
           title={title}
@@ -99,9 +105,33 @@ const AnimatedLink = ({ title, url, className, textsize }) => {
             isHovered={isHovered}
           />
         </motion.div>
-      </Link>
+      </ScrollLink>
     </motion.div>
-  );
+
+    : (
+      <motion.div
+        className={'relative pointer flex flex-col overflow-hidden ' + className}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <Link href={url}>
+          <AnimatedWord
+            textsize={textsize}
+            title={title}
+            animations={letterAnimation}
+            isHovered={isHovered}
+          />
+          <motion.div className='absolute text-white top-0' >
+            <AnimatedWord
+              textsize={textsize}
+              title={title}
+              animations={letterAnimationTwo}
+              isHovered={isHovered}
+            />
+          </motion.div>
+        </Link>
+      </motion.div>
+    );
 };
 
 export { AnimatedLink };

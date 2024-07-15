@@ -136,14 +136,14 @@ const targetIndexesTablet = [
 
 
 const targetIndexesMobile = [
-  [2, 10, 4, 11, 18, 25, 32, 39, 46,45,44,43,42],
+  [2, 10, 4, 11, 18, 25, 32, 39, 46, 45, 44, 43, 42],
   [2, 9, 15, 21, 28, 35, 42],
-  [2, 9, 16, 23, 22, 29, 36, 43,42],
-  [2, 9, 16, 23, 22, 29, 36, 43,42],
-  [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46,45,44,43,42],
-  [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46,45,44,43,42],
-  [2, 9, 16, 17, 24, 25, 32, 31, 38, 39, 46,45,44,43,42],
-  [2, 9, 16, 17, 24, 25, 32, 39, 38, 37, 44,43,42],
+  [2, 9, 16, 23, 22, 29, 36, 43, 42],
+  [2, 9, 16, 23, 22, 29, 36, 43, 42],
+  [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46, 45, 44, 43, 42],
+  [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46, 45, 44, 43, 42],
+  [2, 9, 16, 17, 24, 25, 32, 31, 38, 39, 46, 45, 44, 43, 42],
+  [2, 9, 16, 17, 24, 25, 32, 39, 38, 37, 44, 43, 42],
   [0, 1, 8, 7, 14, 21, 28, 35, 42,],
 ];
 
@@ -209,7 +209,7 @@ const data = [
 
 
 
-export default function Coifficient({container,sectionText}) {
+export default function Coifficient({ container, sectionText }) {
   const isMobile = useIsMobile()
   const isTablet = useIsTablet()
   const [activeRects, setActiveRects] = useState(isMobile ? [2, 9, 15, 21, 28, 35, 42] : [2, 9, 15, 21, 28, 35, 42]);
@@ -226,7 +226,7 @@ export default function Coifficient({container,sectionText}) {
 
   })
 
- 
+
 
   const getTextPosition = (x, y) => {
     const size = 25; // Assuming this is the size for the width and height
@@ -238,41 +238,41 @@ export default function Coifficient({container,sectionText}) {
     // Find the data item corresponding to the clicked rectangle index
     const dataItem = data.find((item) => item.stroked === index);
     setItem(dataItem);
-  
+
     if (dataItem) {
       // Determine the end path based on device type
-      const endPath = !isMobile ? dataItem.endpath + (isTablet ? "H515.5"  : "H615.5") : "L366.44 575.269 H315.5";
-  
+      const endPath = !isMobile ? dataItem.endpath + (isTablet ? "H515.5" : "H615.5") : "L366.44 575.269 H315.5";
+
       // Determine which indexes to use based on device type
       const targetIndexes = isMobile ? targetIndexesMobile : targetIndexesTablet;
-  
+
       // Create new line paths
       const newLinePaths = targetIndexes
-        .map((indexes) => 
+        .map((indexes) =>
           indexes.includes(index) ? createPathFromIndexes(indexes) + endPath : ""
         )
         .filter((path) => path !== "");
-  
+
       // Check if there are any new line paths
       if (newLinePaths.length > 0) {
         // Update the line path state
         setLinePath(newLinePaths[0]);
-  
+
         // Update the path key to trigger re-render
         setPathKey((prevKey) => prevKey + 1);
-  
+
         // Update active rectangles to include the rectangles in the path
         const newActiveRects = targetIndexes
           .filter((indexes) => indexes.includes(index))
           .flat();
-  
+
         setActiveRects(newActiveRects);
         setIsLoading(true); // Show the loader again
       }
     }
   };
 
-  
+
   const createPathFromIndexes = (indexes) => {
     let path = "";
     indexes.forEach((index, idx) => {
@@ -294,14 +294,14 @@ export default function Coifficient({container,sectionText}) {
 
 
   return (
-    <div className={container}>
-       <AnimatedText
-          text={sectionText}
-          stagger={0.05}
-          className={
-            " uppercase  text-3xl md:text-4xl flex flex-grow flex-wrap -pt-14 text-white font-bold mb-20 sm:mb-0 md:mb-10 "
-          }
-        />
+    <div id="coifficient" className={container}>
+      <AnimatedText
+        text={sectionText}
+        stagger={0.05}
+        className={
+          " uppercase  text-3xl md:text-4xl flex flex-grow flex-wrap -pt-14 text-white font-bold mb-20 sm:mb-0 md:mb-10 "
+        }
+      />
       <div className=" justify-center items-center md:items-start md:justify-between flex-col md:flex-row flex  md:h-[70vh]  ">
         <div className=" w-fit scale-[0.7] xs:scale-75  xl:scale-90 2xl:scale-100 -mt-32 sm:mt-0 -ml-3 xs:-ml-24 sm:-ml-20 xl:ml-0  z-30 ">
           <svg width="58" className=" ml-8 xs:ml-7 md:ml-5 z-30   " height="513" viewBox="0 0 58 513" fill="none" xmlns="http://www.w3.org/2000/svg">
