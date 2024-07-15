@@ -6,7 +6,8 @@ const logo = "/seo.webp"; // Update with the correct path to the logo
 const SEO = () => {
     return (
         <>
-            <DefaultSeo
+            <DefaultSeo 
+            
                 title={"Zoero - Navigating Business Complexity with Mathematical Precision"}
                 description="In math, we find certainty among variables. Zoero applies this principle to navigate complex business landscapes. Our strategic approach ensures your business thrives in any market condition. Zoero: Navigating complexity with certainty."
                 keywords={[]}
