@@ -1,14 +1,13 @@
-import React from 'react';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 
-const logo = "path/to/zoero-logo.png"; 
+const logo = "/seo.webp"; // Update with the correct path to the logo
 
 const SEO = () => {
     return (
         <>
             <DefaultSeo
-                title={"Zoero"}
+                title={"Zoero - Navigating Business Complexity with Mathematical Precision"}
                 description="In math, we find certainty among variables. Zoero applies this principle to navigate complex business landscapes. Our strategic approach ensures your business thrives in any market condition. Zoero: Navigating complexity with certainty."
                 keywords={[]}
                 openGraph={{

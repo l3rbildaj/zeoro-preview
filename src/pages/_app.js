@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { Analytics } from "@vercel/analytics/react"
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from "react";
+import SEO from "@/components/seo/DefaultSeo";
 
 
 const pageTransition = {
@@ -65,6 +66,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
+          <SEO />
       <NextIntlClientProvider
         messages={pageProps.messages}
         locale={pageProps.locale}

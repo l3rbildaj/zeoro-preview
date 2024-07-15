@@ -209,7 +209,7 @@ const data = [
 
 
 
-export default function Coifficient() {
+export default function Coifficient({container,sectionText}) {
   const isMobile = useIsMobile()
   const isTablet = useIsTablet()
   const [activeRects, setActiveRects] = useState(isMobile ? [2, 9, 15, 21, 28, 35, 42] : [2, 9, 15, 21, 28, 35, 42]);
@@ -294,9 +294,9 @@ export default function Coifficient() {
 
 
   return (
-    <div className="  relative my-20 md:mt-36 md:my-40   mx-5 2xl:mx-20">
+    <div className={container}>
        <AnimatedText
-          text={"THE COEFFICIENTS"}
+          text={sectionText}
           stagger={0.05}
           className={
             " uppercase  text-3xl md:text-4xl flex flex-grow flex-wrap -pt-14 text-white font-bold mb-20 sm:mb-0 md:mb-10 "

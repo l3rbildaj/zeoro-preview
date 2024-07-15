@@ -41,7 +41,7 @@ export default function Home() {
       </div>
       { isMobile ? <MobileShuffle /> : <ShuffleGrid />}
       <FlickerAnimation />
-      <Coifficient />
+      <Coifficient sectionText={"THE COEFFICIENTS"} container={"relative my-20 md:mt-36 md:my-40   mx-5 2xl:mx-20"} />
       <Medals />
       <div className="  px-5 md:px-10 max-w-[1000px]   my-20 ">
         <AnimatedText
