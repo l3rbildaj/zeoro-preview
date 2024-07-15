@@ -1,8 +1,7 @@
-import React from 'react';
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 
-const logo = "path/to/zoero-logo.png"; 
+const logo = "path/to/zoero-logo.png";
 
 const SEO = () => {
     return (
@@ -74,4 +73,16 @@ const SEO = () => {
     );
 };
 
+
+
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            messages: (await import(`../../lang/${locale}.json`)).default,
+            locale: locale,
+        },
+    };
+}
 export default SEO;
+

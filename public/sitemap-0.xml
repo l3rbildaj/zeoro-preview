@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://website.com</loc><lastmod>2024-04-08T05:31:25.117Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://website.com/500</loc><lastmod>2024-04-08T05:31:25.118Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://website.com/fr/500</loc><lastmod>2024-04-08T05:31:25.118Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://website.com/fr</loc><lastmod>2024-04-08T05:31:25.118Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://website.com/404</loc><lastmod>2024-04-08T05:31:25.118Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://website.com/fr/404</loc><lastmod>2024-04-08T05:31:25.118Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com</loc><lastmod>2024-07-15T21:37:49.500Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/contact</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/domain-expansion</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/exe</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/leads-forge</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/seafena</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/terms</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/teuser</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/500</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/500</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/404</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/404</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/terms</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/teuser</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/leads-forge</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/exe</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/seafena</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/contact</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr/domain-expansion</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://website.com/fr</loc><lastmod>2024-07-15T21:37:49.501Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
