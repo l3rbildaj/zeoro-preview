@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import Logo from "./Logo";
-import { motion } from "framer-motion";
 
 
 const Header = () => {
@@ -11,7 +11,9 @@ const Header = () => {
     <header className="!h-15 z-50 w-full">
       <div className=" px-4 sm:px-6 py-4 flex justify-between items-start mx-auto">
         <div className="flex gap-3 justify-center items-center text-3xl font-bold uppercase">
-          <Logo />
+          <Link href={"/"}>
+            <Logo />
+          </Link>
         </div>
         <div className="flex h-15 relative flex-col text-white/50 gap-1 items-end">
           <div className="gap-1 items-end flex text-xs flex-col absolute">

@@ -16,8 +16,8 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-3 z-40">
               <AnimatedLink url='/' title='Knowledge' />
-              <AnimatedLink url='/' title='Terms & Policies' />
-              <AnimatedLink url='/' title='Contact us' />
+              <AnimatedLink url='/terms' title='Terms & Policies' />
+              <AnimatedLink url='/contact' title='Contact us' />
             </div>
           </div>
           <p className="text-2xl">© Zoero Labs LTD.<br />
@@ -34,8 +34,8 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-3 z-40">
             <AnimatedLink url='/' title='Knowledge' />
-            <AnimatedLink url='/' title='Terms & Policies' />
-            <AnimatedLink url='/' title='Contact us' />
+            <AnimatedLink url='/terms' title='Terms & Policies' />
+            <AnimatedLink url='/contact' title='Contact us' />
           </div>
         </div>
 

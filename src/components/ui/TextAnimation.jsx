@@ -48,7 +48,7 @@ AnimatedText = memo(({ text, className, stagger, delay = 0 }) => {
           {word.split('').map((letter, letterIndex) => (
             <motion.span
               key={letterIndex}
-              className="inline-block  "
+              className=" inline-block  "
               variants={letterVariants}
             // whileHover={{ scale: 1.2, color: '#1d4ed8' }}
             >

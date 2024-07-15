@@ -1,14 +1,15 @@
+import Loader from "@/components/Layout/Loader";
+import SEO from "@/components/seo/DefaultSeo";
 import SmoothScrolling from "@/components/ui/SmoothScrolling";
 import { store } from "@/redux/store";
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { AnimatePresence, motion } from 'framer-motion';
 import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "next-themes";
-import { Provider } from "react-redux";
-import { Analytics } from "@vercel/analytics/react"
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Loader from "@/components/Layout/Loader";
+import { useEffect, useState } from "react";
+import { Provider } from "react-redux";
 
 
 const pageTransition = {
@@ -83,6 +84,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
+      <SEO />
       <NextIntlClientProvider
         messages={pageProps.messages}
         locale={pageProps.locale}
