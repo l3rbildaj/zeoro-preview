@@ -1,6 +1,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import Loader from "./Loader";
 import Footer from "./Footer";
@@ -9,8 +9,9 @@ import Footer from "./Footer";
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
+
   return <AnimatePresence>
-    {!loading ?
+    {loading ?
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{
         opacity: 0, transition: {
           duration: 10
