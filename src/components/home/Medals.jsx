@@ -1,15 +1,21 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { MedalFlickerAnimation } from "../ui/FlickerAnimation";
+import AnimatedText from "../ui/TextAnimation";
 
 
 
 export default function Medals() {
     const sectionRef = useRef(null)
     return (
-        <div className="flex flex-col  justify-start py-10 px-5 md:px-10 gap-10">
-            <h2 ref={sectionRef} className="text-4xl font-bold">FIELDS MEDALS</h2>
-
+        <div ref={sectionRef} className="flex flex-col  justify-start py-10 px-5 md:px-10 gap-10">
+             <AnimatedText
+          text={"FIELDS MEDALS"}
+          stagger={0.05}
+          className={
+            " uppercase  text-3xl md:text-4xl flex flex-wrap max-w-[500px] pt-10 font-bold text-white "
+          }
+        />
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 px-10 justify-center items-center">
                 <MedalItem itemRef={sectionRef} delay={0} />
                 <MedalItem itemRef={sectionRef} delay={2} />

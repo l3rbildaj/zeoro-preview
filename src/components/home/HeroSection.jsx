@@ -45,7 +45,7 @@ function HeroSection() {
           {isLoaded && !isMobile ? <WebglEffect /> : null}
         </Canvas>
       </motion.div>
-      <div className=" relative mt-32 px-10 flex flex-col justify-center items-center md:justify-start h-[50vh] gap-20 md:h-screen">
+      <div className=" relative mt-32 sm:mt-20 px-5 md:px-10 flex flex-col justify-center items-center md:justify-start h-[50vh] gap-20 md:h-screen">
         <motion.div
           animate={{
             translateX: -40,
@@ -79,13 +79,13 @@ function HeroSection() {
             />
           </div>
         </motion.div>
-        <h1 className=" text-white pointer-events-none font-bold text-4xl md:text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
+        <h1 className=" text-white pointer-events-none font-bold text-4xl  xs:text-6xl max-w-[400px] mx-auto sm:max-w-none md:max-w-[600px] lg:max-w-none sm:text-7xl lg:text-9xl xl:text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
           <span><AnimatedText
             text={"WE SOLVE THE"}
             stagger={0.05}
             className={" flex flex-row "}
           /> </span>
-          <span className=" flex self-end   items-center gap-3 ">
+          <span className=" flex self-end  -mt-5 sm:mt-0  items-center gap-3 ">
             <motion.svg
               initial={{
                 opacity: '0%',
@@ -112,14 +112,14 @@ function HeroSection() {
             <AnimatedText
               text={"MILLENNIUM"}
               stagger={0.05}
-              className={" flex flex-row "}
+              className={" flex flex-row  "}
             />
           </span>
           <span className=" pl-0 lg:pl-20 "><AnimatedText
             text={"EQUATIONS"}
             delay={1}
             stagger={0.05}
-            className={" flex flex-row "}
+            className={" flex flex-row -mt-5 sm:mt-0    "}
           /></span>
         </h1>
         <div className="flex flex-col justify-center items-center gap-2">
@@ -136,3 +136,6 @@ function HeroSection() {
 }
 
 export default HeroSection
+
+
+

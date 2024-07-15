@@ -68,9 +68,15 @@ function Reasoning() {
 
   }, [])
   return (
-    <div ref={container} className=" h-[300vh] px-10 ">
+    <div ref={container} className=" h-[300vh] px-5 md:px-10 ">
       <div className=" sticky top-0  h-screen ">
-        <h1 className=" uppercase text-4xl pt-10 text-white font-bold ">THE REASONING</h1>
+      <AnimatedText
+          text={"THE REASONING"}
+          stagger={0.05}
+          className={
+            " uppercase  text-3xl md:text-4xl flex flex-wrap max-w-[500px] text-white pt-10 font-bold "
+          }
+        />
         <div className=" flex flex-col md:flex-row justify-start md:justify-center z-20  items-center h-full pb-24 gap-5 md:gap-20 ">
           <svg width="379" className="w-60 md:w-[20vw]" height="379" viewBox="0 0 379 379" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="189.5" cy="189.5" r="188" stroke="white" stroke-width="3" />

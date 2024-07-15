@@ -99,6 +99,7 @@ const Link = dynamic(() => import('next/link'));
 const Image = dynamic(() => import('next/image'));
 import { useRouter } from "next/router";
 import { useMemo, useRef, useState } from "react";
+import AnimatedText from "../ui/TextAnimation";
 
 const MobileShuffle = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
@@ -130,9 +131,14 @@ const MobileShuffle = () => {
   return (
     <div className="px-5 md:px-10 mt-20">
       <div className="flex items-center justify-between mb-10">
-        <h1 className="uppercase text-4xl text-white font-bold">
-          THE EXPERIMENTS
-        </h1>
+        <AnimatedText
+          text={"THE EXPERIMENTS"}
+          stagger={0.05}
+          className={
+            " uppercase text-3xl md:text-4xl flex flex-wrap max-w-[500px]  font-bold "
+          }
+        />
+
         <button className="text-white" onClick={shuffle}>
           <svg
             width="30"
@@ -184,5 +190,63 @@ const MobileShuffle = () => {
     </div>
   );
 };
+
+return (
+  <div className="px-5 md:px-10 mt-20">
+    <div className="flex items-center justify-between mb-10">
+      <h1 className="uppercase text-4xl text-white font-bold">
+        THE EXPERIMENTS
+      </h1>
+      <button className="text-white" onClick={shuffle}>
+        <svg
+          width="30"
+          height="52"
+          viewBox="0 0 57 79"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M29.7667 79L0 40.2453L29.7667 0L57 40.2453L29.7667 79Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+    <div className="grid grid-cols-7 grid-rows-7 gap-2 h-[600px]">
+      <AnimatePresence>
+        {reorderedItems.map((item, index) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0.8, rotate: 10 }}
+
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 50,
+            }}
+            layout
+            className={`flex items-center justify-center relative w-full h-full ${index === 0 ? 'col-span-7 row-span-4' : item.grid
+              }`}
+          >
+            <Link href={item.link || ''} key={item.id}>
+              <Image
+                src={item.img}
+                alt=""
+                layout="fill" // Use fill layout to adapt to the container size
+                quality={100} // Set quality to 100 for all images
+                className="object-cover select-none"
+                placeholder="blur" // Enable blur placeholder
+                blurDataURL={""} // Provide blurDataURL if available
+              />
+            </Link>
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
+  </div>
+);
+
 
 export default MobileShuffle;

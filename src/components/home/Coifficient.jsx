@@ -2,6 +2,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 import { useIsTablet } from "@/hooks/useIsTablet";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import AnimatedText from "../ui/TextAnimation";
 
 const rectangles = [
   { x: 7.10938, y: 366.467, fill: "#505050" },
@@ -211,8 +212,8 @@ const data = [
 export default function Coifficient() {
   const isMobile = useIsMobile()
   const isTablet = useIsTablet()
-  const [activeRects, setActiveRects] = useState(isMobile ? [] : [2, 9, 15, 21, 28, 35, 42]);
-  const [linePath, setLinePath] = useState(isMobile ? "M0.853027 2.28418H31.406L92.7824 63.6605H184.441V167.5L160 167.5" : initialLine.d);
+  const [activeRects, setActiveRects] = useState(isMobile ? [2, 9, 15, 21, 28, 35, 42] : [2, 9, 15, 21, 28, 35, 42]);
+  const [linePath, setLinePath] = useState(isMobile ? "M26.91138 254.09199999999998 L83.4993 254.09199999999998 L140.087 310.68 L196.67499999999998 367.269 L253.263 367.269 L309.851 367.269 L366.44 367.269L366.44 575.269 H315.5" : initialLine.d);
   const [pathKey, setPathKey] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [item, setItem] = useState(data[0])
@@ -294,7 +295,13 @@ export default function Coifficient() {
 
   return (
     <div className="  relative my-20 md:mt-36 md:my-40   mx-5 2xl:mx-20">
-      <h1 className=" uppercase text-4xl -pt-14 text-white font-bold mb-20 sm:mb-0 md:mb-10 ">THE COEFFICIENTS</h1>
+       <AnimatedText
+          text={"THE COEFFICIENTS"}
+          stagger={0.05}
+          className={
+            " uppercase  text-3xl md:text-4xl flex flex-grow flex-wrap -pt-14 text-white font-bold mb-20 sm:mb-0 md:mb-10 "
+          }
+        />
       <div className=" justify-center items-center md:items-start md:justify-between flex-col md:flex-row flex  md:h-[70vh]  ">
         <div className=" w-fit scale-[0.7] xs:scale-75  xl:scale-90 2xl:scale-100 -mt-32 sm:mt-0 -ml-3 xs:-ml-24 sm:-ml-20 xl:ml-0  z-30 ">
           <svg width="58" className=" ml-8 xs:ml-7 md:ml-5 z-30   " height="513" viewBox="0 0 58 513" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,16 +390,16 @@ export default function Coifficient() {
           {isLoading ? (
             <BlurIn>
               <h1 className=" text-white text-3xl xl:text-4xl font-semibold ">{item?.title}</h1>
-              <p className=" text-[#fff]/70 text-xl xl:text-2xl  ">{item?.description}</p>
+              <p className=" text-[#fff]/70 text-xl xl:text-2xl max-w-[400px] ">{item?.description}</p>
             </BlurIn>
           ) : (
             <>
-              <TypingEffect delay={"0.04"} pathKey={pathKey} text={item?.title} className="  text-white text-3xl font-semibold " />
+              <TypingEffect delay={"0.04"} pathKey={pathKey} text={item?.title} className="  text-white text-3xl xl:text-4xl font-semibold " />
               <TypingEffect
                 pathKey={pathKey}
                 text={item?.description}
-                className=" text-[#505050] text-xl  "
-                containerClass=" max-w-[450px] "
+                className=" text-[#505050] text-xl xl:text-2xl  "
+                containerClass=" max-w-[400px] "
                 delay={"0.01"}
               />
             </>
