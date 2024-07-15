@@ -56,8 +56,9 @@ const FlickerNumber = React.memo(({ initialNumber, stable = false, disapear = fa
   return (
     <motion.div
       style={{
-        color: stable ? '#8E6AE0' : 'white'
+        color: stable ? '#8E6AE0' : 'white',
       }}
+      animate={{ opacity: disapear ? 0 : 1, }}
       className="text-3xl font-bold w-3 mx-1"
       ref={ref}
     >
@@ -81,17 +82,19 @@ const FlickerAnimation = () => {
 
   return (
     <FlickerProvider>
-      <div className="flex flex-col items-center justify-center bg-[#3C3C3C] py-6 px-2 my-20">
-        {Array.from({ length: lines }).map((_, lineIndex) => (
-          <div key={lineIndex} className="flex gap-3">
-            {Array.from({ length: numbersPerLine }).map((_, numberIndex) => (
-              <FlickerNumber
-                key={numberIndex}
-                initialNumber={getInitialNumber(lineIndex, numberIndex)}
-              />
-            ))}
-          </div>
-        ))}
+      <div className="bg-[#3C3C3C] md:py-6 my-20">
+        <div className="flex flex-col items-center justify-center  md:scale-100 scale-50 ">
+          {Array.from({ length: lines }).map((_, lineIndex) => (
+            <div key={lineIndex} className="flex gap-3">
+              {Array.from({ length: numbersPerLine }).map((_, numberIndex) => (
+                <FlickerNumber
+                  key={numberIndex}
+                  initialNumber={getInitialNumber(lineIndex, numberIndex)}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </FlickerProvider>
   );
@@ -105,7 +108,7 @@ export default FlickerAnimation;
 
 
 
-export const LoaderFlickerAnimation = ({ finished = false }) => {
+export const LoaderFlickerAnimation = ({ finished = false, disapear = false }) => {
   const lines = 5;
   const numbersPerLine = 15;
 
@@ -123,6 +126,7 @@ export const LoaderFlickerAnimation = ({ finished = false }) => {
           (<div key={lineIndex} className="flex gap-3">
             {Array.from({ length: numbersPerLine }).map((_, numberIndex) => numberIndex >= 5 && numberIndex <= 9 ? (
               <FlickerNumber
+                disapear={disapear}
                 stable={true}
                 key={numberIndex}
                 initialNumber={getInitialNumber(lineIndex, numberIndex)}
@@ -130,6 +134,7 @@ export const LoaderFlickerAnimation = ({ finished = false }) => {
             ) :
               (
                 <FlickerNumber
+                  disapear={disapear}
                   key={numberIndex}
                   initialNumber={getInitialNumber(lineIndex, numberIndex)}
                 />
@@ -139,6 +144,7 @@ export const LoaderFlickerAnimation = ({ finished = false }) => {
           : (<div key={lineIndex} className="flex gap-3">
             {Array.from({ length: numbersPerLine }).map((_, numberIndex) => (
               <FlickerNumber
+                disapear={disapear}
                 key={numberIndex}
                 initialNumber={getInitialNumber(lineIndex, numberIndex)}
               />

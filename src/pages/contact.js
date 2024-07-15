@@ -130,9 +130,9 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className=" my-32 ">
+        {/* <div className=" my-32 ">
           <Banner />
-        </div>
+        </div> */}
       </div>
       <FlickerAnimation />
       <div className=" px-5 md:px-10 max-w-[1000px]  my-20 ">
