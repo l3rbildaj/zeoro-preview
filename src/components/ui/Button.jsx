@@ -8,7 +8,7 @@ const AnimatedButton = ({text="SEND US YOUR EQUATION"}) => {
 
   return (
     <motion.button
-      className="relative font-bold overflow-hidden px-10 py-4 text-white border-4 mb-10 uppercase bg-black rounded-lg"
+      className=" font-bold mx-auto overflow-hidden px-10 py-4 text-white border-4 mb-10 uppercase bg-black rounded-lg"
       whileHover={{
         scale: 1.1,
         borderColor: "#00ffff",

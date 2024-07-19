@@ -117,33 +117,45 @@ const strokedRectangles = [
 ];
 
 const initialLine = {
-  d: "M27 253.5H83.5L197 367H366.5H446.5V128.5H615.5",
+  d: "M27 253.5H83.5L197 367H366.5H446.5V170.5H515.5",
   stroke: "white",
   strokeWidth: 5,
 };
 
+// const targetIndexesTablet = [
+//   [2, 10, 4, 11, 18, 25, 32, 39, 46],
+//   [2, 9, 15, 21, 28, 35, 42],
+//   [2, 9, 16, 23, 22, 29, 36, 43],
+//   [2, 9, 16, 23, 22, 29, 36, 43],
+//   [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46],
+//   [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46],
+//   [2, 9, 16, 17, 24, 25, 32, 31, 38, 39, 46],
+//   [2, 9, 16, 17, 24, 25, 32, 39, 38, 37, 44],
+//   [0, 1, 8, 7, 14, 21, 28, 35, 42, 43],
+// ];
+
 const targetIndexesTablet = [
-  [2, 10, 4, 11, 18, 25, 32, 39, 46],
+  [5,11,18,25,32,39,46],
   [2, 9, 15, 21, 28, 35, 42],
   [2, 9, 16, 23, 22, 29, 36, 43],
   [2, 9, 16, 23, 22, 29, 36, 43],
-  [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46],
-  [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46],
-  [2, 9, 16, 17, 24, 25, 32, 31, 38, 39, 46],
-  [2, 9, 16, 17, 24, 25, 32, 39, 38, 37, 44],
-  [0, 1, 8, 7, 14, 21, 28, 35, 42, 43],
+  [6,13,20,27,34,41,48],
+  [5,12,19,26,33,40,47],
+  [4,10,17,24,31,38,45],
+  [2,9,16,23,30,37,44],
+  [0,7,14,21,28,35,42 ],
 ];
 
 
 const targetIndexesMobile = [
-  [2, 10, 4, 11, 18, 25, 32, 39, 46,45,44,43,42],
-  [2, 9, 15, 21, 28, 35, 42],
+  [2, 10, 4, 11, 18, 25, 32, 39, 46,45,38,37,36,35,42],
   [2, 9, 16, 23, 22, 29, 36, 43,42],
-  [2, 9, 16, 23, 22, 29, 36, 43,42],
-  [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46,45,44,43,42],
-  [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46,45,44,43,42],
-  [2, 9, 16, 17, 24, 25, 32, 31, 38, 39, 46,45,44,43,42],
+  [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46,45,38,37,36,35,42],
+  [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46,45,38,37,36,35,42],
+  [2, 9, 16, 17, 24, 25, 32, 31, 38, 37, 36,35,42],
   [2, 9, 16, 17, 24, 25, 32, 39, 38, 37, 44,43,42],
+  [2, 9, 16, 23, 22, 29, 36, 43,42],
+  [2, 9, 15, 21, 28, 35, 42],
   [0, 1, 8, 7, 14, 21, 28, 35, 42,],
 ];
 
@@ -152,68 +164,69 @@ const strokedIndexes = [0, 15, 18, 20, 29, 31, 40, 44];
 const data = [
   {
     stroked: 18,
-    endpath: "H446.5V210.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    endpath: "H446.5V141.5",
+    title: "Formula Foundations",
+    description: "Requirements Analysis: Define project goals and scope clearly"
   },
   {
     stroked: 15,
     endpath: "5H446.5V150.5",
-    title: "DEVELOPMENT",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    title: "Market Matrix Analysis",
+    description: "Requirements Analysis: Define project goals and scope clearly"
   },
   {
     stroked: 20,
-    endpath: "5H446.5V200.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    endpath: "5H446.5V150.5",
+    title: "UX Geometrics",
+    description: "Market Research: Understand market trends and competition"
   },
   {
     stroked: 29,
-    endpath: "5H446.5V200.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    endpath: "5H446.5V150.5",
+    title: "Tech Topology",
+    description: "UX Design: Create intuitive designs and prototypes."
   },
   {
     stroked: 40,
-    endpath: "5H446.5V208.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    endpath: "5H446.5V150.5",
+    title: "MVP Calculus",
+    description: "Architecture Planning: Develop scalable technical structures."
   },
   {
     stroked: 31,
-    endpath: "5H446.5V208.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    endpath: "5H440.5V197.5",
+    title: "Integral QA",
+    description: "MVP Development: Launch basic yet functional products."
   },
   {
     stroked: 44,
     endpath: "5H446.5V158.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    title: "Integral QA",
+    description: "Quality Assurance: Perform comprehensive testing for reliability."
   },
   {
     stroked: 29,
     endpath: "5H446.5V128.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    title: "Scalar Cloud",
+    description: "Cloud Deployment: Offer scalable and efficient cloud solutions"
   },
   {
     stroked: 0,
     endpath: "5H446.5V158.5",
-    title: "WEBSITE DESIGN",
-    description: "Sapien eget proin massa nisi interdu morbi sed cras mattis egestas eros Sapien eget proin massa nisi int morbi sed cras mattis egestas"
+    title: "Cipher Secure",
+    description: "Platform Maintenance: Ensure ongoing stability and security"
   },
 ];
 
 
 
 
-export default function Coifficient({container,sectionText}) {
+
+export default function Coifficient({container,sectionText,setCoff}) {
   const isMobile = useIsMobile()
   const isTablet = useIsTablet()
   const [activeRects, setActiveRects] = useState(isMobile ? [2, 9, 15, 21, 28, 35, 42] : [2, 9, 15, 21, 28, 35, 42]);
-  const [linePath, setLinePath] = useState(isMobile ? "M26.91138 254.09199999999998 L83.4993 254.09199999999998 L140.087 310.68 L196.67499999999998 367.269 L253.263 367.269 L309.851 367.269 L366.44 367.269L366.44 575.269 H315.5" : initialLine.d);
+  const [linePath, setLinePath] = useState(isMobile ? "M26.91138 254.09199999999998 L83.4993 254.09199999999998 L140.087 310.68 L196.67499999999998 367.269 L253.263 367.269 L309.851 367.269 L366.44 367.269 L366.44 500.269 H170.5 V540 H170  " : initialLine.d);
   const [pathKey, setPathKey] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [item, setItem] = useState(data[0])
@@ -235,13 +248,19 @@ export default function Coifficient({container,sectionText}) {
   };
 
   const handleRectClick = (index) => {
+
     // Find the data item corresponding to the clicked rectangle index
     const dataItem = data.find((item) => item.stroked === index);
     setItem(dataItem);
+
+    if(setCoff){
+      setCoff(dataItem.title)
+    }
+
   
     if (dataItem) {
       // Determine the end path based on device type
-      const endPath = !isMobile ? dataItem.endpath + (isTablet ? "H515.5"  : "H615.5") : "L366.44 575.269 H315.5";
+      const endPath = !isMobile ? dataItem.endpath + (isTablet ? "H366.5H446.5V170.5H515"  : "  H566.5") : " L366.44 500.269 H170.5 V540 H168  ";
   
       // Determine which indexes to use based on device type
       const targetIndexes = isMobile ? targetIndexesMobile : targetIndexesTablet;

@@ -8,7 +8,7 @@ function Banner({ text, href }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className=" relative w-full ">
+    <div className=" relative w-full mt-20 sm:mt-0 ">
       <Image
         src={img3}
         alt=""
@@ -18,7 +18,7 @@ function Banner({ text, href }) {
         className="   object-cover w-full -ml-0   "
       />
       <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
-        <Link href={href || "/contact"} className=" w-full ">
+        <Link href={href || "/contact"} className=" w-full mx-auto justify-center items-center flex ">
           <AnimatedButton
             text={text}
             onMouseEnter={() => setIsHovered(true)}

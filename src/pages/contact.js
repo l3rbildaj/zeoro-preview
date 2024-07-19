@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout/Layout";
-import Banner from "@/components/ui/Banner";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import AnimatedText from "@/components/ui/TextAnimation";
 import { motion } from "framer-motion";
@@ -7,17 +6,20 @@ import Image from "next/image";
 
 import profile_pic from "@/assets/exe/profile__pic.png";
 import Coifficient from "@/components/home/Coifficient";
+import AnimatedButton from "@/components/ui/Button";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import img3 from "@/assets/img3.png";
 
 function Contact() {
 
 
   const [sending, setSending] = useState(false);
+  const [coff, setCoff] = useState()
   const handleSubmit = (e) => {
     setSending(true);
-    e.preventDefault();
+
 
     const name = e.target.name.value;
     const company_email = e.target.company_email.value;
@@ -35,6 +37,7 @@ function Contact() {
         email: company_email,
         reply_to: company_email,
         company_name: company_name,
+        coff: coff
       };
 
       emailjs
@@ -57,6 +60,8 @@ function Contact() {
         );
     }
 
+
+    e.preventDefault();
   };
 
 
@@ -113,7 +118,7 @@ function Contact() {
               <input
                 type="text"
                 name="name"
-                className=" border border-white rounded-[5px] w-full py-5 px-3 mt-1 placeholder:text-[#BABABA] "
+                className=" border border-white rounded-[5px] text-white bg-[#121212] w-full py-5 px-3 mt-1 placeholder:text-[#BABABA] "
                 autoComplete="off"
                 spellCheck="false"
                 placeholder="Your Full Name"
@@ -138,7 +143,7 @@ function Contact() {
               <input
                 type="text"
                 name="company_email"
-                className=" border border-white w-full rounded-[5px] py-5 px-5 mt-1 placeholder:text-[#BABABA] "
+                className=" border border-white w-full rounded-[5px] text-white bg-[#121212] py-5 px-5 mt-1 placeholder:text-[#BABABA] "
                 autoComplete="off"
                 spellCheck="false"
 
@@ -164,7 +169,7 @@ function Contact() {
               <input
                 type="text"
                 name="company_name"
-                className=" border border-white w-full rounded-[5px] py-5 px-5 mt-1 placeholder:text-[#BABABA] "
+                className=" border border-white w-full rounded-[5px] text-white py-5 px-5 mt-1 bg-[#121212] placeholder:text-[#BABABA] "
                 autoComplete="off"
                 spellCheck="false"
                 placeholder="Nice to meet you!"
@@ -188,7 +193,7 @@ function Contact() {
               <label className=" text-white ">Your Project’s Idea</label>
               <input
                 type="text"
-                className=" border border-white w-full rounded-[5px] py-5 px-5 mt-1 placeholder:text-[#BABABA] "
+                className=" border border-white w-full rounded-[5px] text-white py-5 px-5 mt-1 bg-[#121212] placeholder:text-[#BABABA] "
                 autoComplete="off"
                 spellCheck="false"
                 placeholder="In One Line"
@@ -209,7 +214,7 @@ function Contact() {
                 />
               </svg>
             </div>
-            <div className=" col-span-2 w-full  " >
+            {/* <div className=" col-span-2 w-full  " >
               <motion.button
                 className="  w-full font-bold flex gap-10 justify-center items-center relative overflow-hidden px-10 py-4 text-white border-4 mb-10 uppercase bg-black rounded-lg"
                 whileHover={{
@@ -242,12 +247,28 @@ function Contact() {
                   </div>
                 )}
               </motion.button>
+            </div> */}
+        <Coifficient setCoff={setCoff} sectionText={"SELECT YOUR COEFFICIENTS"} container={"relative my-20 md:mt-36 md:my-40 col-span-2   "} />
+        <div className=" my-10 col-span-2 ">
+          <div className=" relative w-full  ">
+            <Image
+              src={img3}
+              alt=""
+              width={2000}
+              height={2000}
+              quality={100}
+              className="   object-cover w-full -ml-0   "
+            />
+            <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
+              <button type="submit" className=" w-full mx-auto justify-center items-center flex ">
+                <AnimatedButton
+                  text={"SEND US YOUR EQUATION"}
+                />
+              </button>
             </div>
-          </form>
+          </div>
         </div>
-        <Coifficient sectionText={"SELECT YOUR COEFFICIENTS"} container={"relative my-20 md:mt-36 md:my-40   "} />
-        <div className=" my-32 ">
-          <Banner />
+          </form>
         </div>
       </div>
       <FlickerAnimation />

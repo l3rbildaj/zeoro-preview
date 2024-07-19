@@ -115,11 +115,11 @@ function Reasoning() {
             <AnimatePresence>
               {
                 CONTENT_DATA.map((content, index) => state === index + 1 && (<>
-                  <motion.p key={'title' + index} initial={{ opacity: 0, translateY: 100 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: -100 }} transition={{ delay: .1, duration: .5, ease: 'easeInOut' }} className=" text-white capitalize text-base md:text-xl -mt-1 ">
+                  <motion.p key={'title' + index} initial={{ opacity: 0, translateY: 100 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: -100 }} transition={{ delay: .1, duration: .5, ease: 'easeInOut' }} className=" text-white capitalize text-base md:text-3xl -mt-1 ">
                     {content.title}
                   </motion.p>
 
-                  <motion.p key={'description' + index} initial={{ opacity: 0, translateY: 100 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: -100 }} transition={{ delay: .3, duration: .5, ease: 'easeInOut' }} dangerouslySetInnerHTML={{ __html: content.content }} className=" mt-2 w-60 text-xs text-white"></motion.p>
+                  <motion.p key={'description' + index} initial={{ opacity: 0, translateY: 100 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: -100 }} transition={{ delay: .3, duration: .5, ease: 'easeInOut' }} dangerouslySetInnerHTML={{ __html: content.content }} className=" mt-2 w-full sm:w-96 text-lg text-white"></motion.p>
                 </>
                 ))
               }

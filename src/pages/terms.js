@@ -12,7 +12,7 @@ function index() {
   return (
     <Layout>
       <div className=" w-full mt-40">
-        <div className=" flex text-white flex-col gap-2 max-w-5xl mx-auto">
+        <div className=" flex text-white  flex-col gap-2 max-w-5xl mx-auto">
           <AnimatedText
             text={"Privacy Policy"}
             stagger={0.05}
@@ -23,7 +23,7 @@ function index() {
           </p>
         </div>
         <section>
-          <div class="flex flex-col  justify-center px-5 md:px-10">
+          <div class="flex flex-col  justify-center px-5 md:px-10 text-white">
             <div className="mx-auto w-full max-w-5xl py-12 md:py-16 lg:py-20">
               <div className="mb-6 flex flex-col items-start gap-y-3">
                 <p className="text-sm font-bold  sm:text-3xl ">

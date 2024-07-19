@@ -13,6 +13,13 @@ const WebglEffect = dynamic(() => import('./WebglEffect'), { ssr: false });
 function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
   const isMobile = useIsMobile()
+  const [isFadingOut, setIsFadingOut] = useState(false);
+
+
+
+  const FadeOut = () => {
+    setIsFadingOut(true);
+  }
 
   useEffect(() => {
     // Function to check if everything is loaded
@@ -53,15 +60,20 @@ function HeroSection() {
           transition={{
             duration: 1,
           }}
-
-
           className=" absolute  md:-top-[50vh] md:-left-40  hidden md:block  object-cover !z-[0]">
-          <div className="w-full h-full relative">
+          <motion.div animate={{
+            opacity: isFadingOut ? 0 : 1,
+          }}
+            transition={{
+              duration: 1,
+              ease: [0.83, 0.8, 0.17, 1],
+            }} className="w-full h-full relative">
             <motion.div initial={{
               left: '0',
             }}
               animate={{
                 left: '100%',
+                opacity: isFadingOut ? 0 : 1,
               }}
               transition={{
                 duration: 1,
@@ -77,9 +89,9 @@ function HeroSection() {
               quality={100}
               className=" opacity-80 scale-75 z-0"
             />
-          </div>
+          </motion.div>
         </motion.div>
-        <h1 className=" text-white pointer-events-none font-bold text-4xl  xs:text-6xl max-w-[400px] mx-auto sm:max-w-none md:max-w-[600px] lg:max-w-none sm:text-7xl lg:text-9xl xl:text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
+        <h1 className="  text-white   font-bold text-4xl  xs:text-6xl max-w-[400px] mx-auto sm:max-w-none md:max-w-[600px] lg:max-w-none sm:text-7xl lg:text-9xl xl:text-[150px] leading-none w-full uppercase !z-[5000] relative text-start flex flex-col items-start  ">
           <span><AnimatedText
             text={"WE SOLVE THE"}
             stagger={0.05}
@@ -87,6 +99,7 @@ function HeroSection() {
           /> </span>
           <span className=" flex self-end  -mt-5 sm:mt-0  items-center gap-3 ">
             <motion.svg
+              onClick={() => FadeOut()}
               initial={{
                 opacity: '0%',
               }}
@@ -100,7 +113,7 @@ function HeroSection() {
               width="57"
               height="79"
               viewBox="0 0 57 79"
-              className=' w-5 md:w-auto  '
+              className=' w-5 sm:w-10 lg:w-auto z-50 cursor-pointer  '
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
