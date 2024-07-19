@@ -68,9 +68,9 @@ function Reasoning() {
 
   }, [])
   return (
-    <div ref={container} className=" h-[300vh] px-5 md:px-10 ">
+    <div id='reasoning' ref={container} className=" h-[300vh] px-5 md:px-10 ">
       <div className=" sticky top-0  h-screen ">
-      <AnimatedText
+        <AnimatedText
           text={"THE REASONING"}
           stagger={0.05}
           className={

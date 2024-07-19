@@ -8,6 +8,7 @@ export default function Loader({ loading, setLoading }) {
     const [finished, setFinished] = useState(false)
     const [gonnaScale, setGonnaScale] = useState(false)
 
+
     useEffect(
         () => {
             setTimeout(() => {
@@ -29,7 +30,7 @@ export default function Loader({ loading, setLoading }) {
 
     return (
         <motion.div className="relative top-0 left-0 w-full h-screen ">
-            <div className='absolute z-0 -top-40 -right-40 scale-75'>
+            <div className='absolute z-0 md:-top-40 -top-[50vh] -right-[100vw] md:-right-40 scale-50 md:scale-75'>
                 <div className='relative'>
                     <motion.div initial={{ right: 0 }} animate={{ right: '-100%' }} transition={{ duration: .7, delay: 1 }} className='bg-black w-full h-full absolute'>
 
@@ -47,21 +48,20 @@ export default function Loader({ loading, setLoading }) {
                     </svg>
                 </div>
             </div>
-            <div className="w-full flex z-40 flex-col justify-center items-center h-full">
-                <LoaderFlickerAnimation finished={finished} />
+            <div className="w-full flex z-40 flex-col justify-center scale-50 md:scale-100 items-center h-full">
+                <LoaderFlickerAnimation disapear={gonnaScale} finished={finished} />
                 <AnimatePresence>
-                    {
+                    {/* {
                         finished &&
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }} className="bg-black absolute w-[40%] h-[40%] text-4xl font-bold z-20">
                         </motion.div>
-                    }
+                    } */}
                     {/* {
                         finished && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, scale: gonnaScale ? 3 : 1 }} transition={{ duration: .5, ease: 'easeInOut' }} className="bg-[#121212] w-56 z-20 h-28 absolute"></motion.div>
                     } */}
                     {
                         finished && <>
                             <LogoAnimationLoader gonnaScale={gonnaScale} />
-
                         </>
                     }
                 </AnimatePresence>
