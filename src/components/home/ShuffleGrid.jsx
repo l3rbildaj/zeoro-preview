@@ -63,6 +63,8 @@ const data = [
     color: "bg-green-500",
     grid: "col-span-3 row-span-4",
     img: img2,
+    link: "/seafena",
+
   },
   {
     id: 2,
@@ -83,7 +85,7 @@ const data = [
     color: "bg-gray-500",
     grid: "col-span-1 row-span-2",
     img: img5,
-    link: "",
+    link: "/teuser",
   },
 ];
 
@@ -92,14 +94,13 @@ import img2 from "@/assets/projects/img2.png";
 import img3 from "@/assets/projects/img3.png";
 import img4 from "@/assets/projects/img4.png";
 import img5 from "@/assets/projects/img5.png";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
+import { useMemo, useRef, useState } from "react";
+import AnimatedText from "../ui/TextAnimation";
 // Dynamically import Link and Image to reduce initial bundle size
 const Link = dynamic(() => import('next/link'));
 const Image = dynamic(() => import('next/image'));
-import { useRouter } from "next/router";
-import { useMemo, useRef, useState } from "react";
-import AnimatedText from "../ui/TextAnimation";
 
 const ShuffleGrid = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
