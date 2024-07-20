@@ -167,7 +167,7 @@ export default Seafena;
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            messages: (await import("../../lang/${locale}.json")).default,
+            messages: (await import(`../../lang/${locale}.json`)).default,
             locale: locale,
         },
     };
