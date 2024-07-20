@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 
 
 const pageTransition = {
-  initial: { opacity: 0, y: 50, scale: 0.8 },
+  initial: { opacity: 0, },
   animate: {
     opacity: 1,
     y: 0,
@@ -26,7 +26,7 @@ const pageTransition = {
   exit: {
     opacity: 0,
     y: -50,
-    scale: 0.8,
+
     transition: {
       duration: 0.6,
     },
@@ -34,7 +34,7 @@ const pageTransition = {
 };
 
 const childVariants = {
-  initial: { opacity: 0, y: 50 },
+  initial: { opacity: 0 },
   animate: {
     opacity: 1,
     y: 0,
@@ -42,7 +42,7 @@ const childVariants = {
       duration: 0.6,
     },
   },
-  exit: { opacity: 0, y: 50 },
+  exit: { opacity: 0 },
 };
 
 

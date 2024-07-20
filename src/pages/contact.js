@@ -248,26 +248,28 @@ function Contact() {
                 )}
               </motion.button>
             </div> */}
-        <Coifficient setCoff={setCoff} sectionText={"SELECT YOUR COEFFICIENTS"} container={"relative my-20 md:mt-36 md:my-40 col-span-2   "} />
-        <div className=" my-10 col-span-2 ">
-          <div className=" relative w-full  ">
-            <Image
-              src={img3}
-              alt=""
-              width={2000}
-              height={2000}
-              quality={100}
-              className="   object-cover w-full -ml-0   "
-            />
-            <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
-              <button type="submit" className=" w-full mx-auto justify-center items-center flex ">
-                <AnimatedButton
-                  text={"SEND US YOUR EQUATION"}
+            <Coifficient setCoff={setCoff} sectionText={"SELECT YOUR COEFFICIENTS"} container={"relative my-20 md:mt-36 md:my-40 col-span-2   "} />
+            <div className=" my-0 col-span-2 ">
+              <div className=" relative w-full  ">
+                <div className="w-40 h-40 bg-gradient-to-l from-black via-black/50 to-black/0 absolute right-0" />
+                <div className="w-40 h-40 bg-gradient-to-r from-black via-black/50 to-black/0 absolute left-0 bottom-0" />
+                <Image
+                  src={img3}
+                  alt=""
+                  width={2000}
+                  height={2000}
+                  quality={100}
+                  className="   object-cover w-full -ml-0   "
                 />
-              </button>
+                <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
+                  <button type="submit" className=" w-full mx-auto justify-center items-center flex ">
+                    <AnimatedButton
+                      text={"SEND US YOUR EQUATION"}
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
           </form>
         </div>
       </div>

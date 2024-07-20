@@ -135,26 +135,26 @@ const initialLine = {
 // ];
 
 const targetIndexesTablet = [
-  [5,11,18,25,32,39,46],
+  [5, 11, 18, 25, 32, 39, 46],
   [2, 9, 15, 21, 28, 35, 42],
   [2, 9, 16, 23, 22, 29, 36, 43],
   [2, 9, 16, 23, 22, 29, 36, 43],
-  [6,13,20,27,34,41,48],
-  [5,12,19,26,33,40,47],
-  [4,10,17,24,31,38,45],
-  [2,9,16,23,30,37,44],
-  [0,7,14,21,28,35,42 ],
+  [6, 13, 20, 27, 34, 41, 48],
+  [5, 12, 19, 26, 33, 40, 47],
+  [4, 10, 17, 24, 31, 38, 45],
+  [2, 9, 16, 23, 30, 37, 44],
+  [0, 7, 14, 21, 28, 35, 42],
 ];
 
 
 const targetIndexesMobile = [
-  [2, 10, 4, 11, 18, 25, 32, 39, 46,45,38,37,36,35,42],
-  [2, 9, 16, 23, 22, 29, 36, 43,42],
-  [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46,45,38,37,36,35,42],
-  [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46,45,38,37,36,35,42],
-  [2, 9, 16, 17, 24, 25, 32, 31, 38, 37, 36,35,42],
-  [2, 9, 16, 17, 24, 25, 32, 39, 38, 37, 44,43,42],
-  [2, 9, 16, 23, 22, 29, 36, 43,42],
+  [2, 10, 4, 11, 18, 25, 32, 39, 46, 45, 38, 37, 36, 35, 42],
+  [2, 9, 16, 23, 22, 29, 36, 43, 42],
+  [2, 3, 4, 5, 6, 13, 20, 27, 26, 33, 32, 39, 46, 45, 38, 37, 36, 35, 42],
+  [2, 9, 16, 17, 24, 25, 32, 39, 40, 47, 46, 45, 38, 37, 36, 35, 42],
+  [2, 9, 16, 17, 24, 25, 32, 31, 38, 37, 36, 35, 42],
+  [2, 9, 16, 17, 24, 25, 32, 39, 38, 37, 44, 43, 42],
+  [2, 9, 16, 23, 22, 29, 36, 43, 42],
   [2, 9, 15, 21, 28, 35, 42],
   [0, 1, 8, 7, 14, 21, 28, 35, 42,],
 ];
@@ -222,7 +222,7 @@ const data = [
 
 
 
-export default function Coifficient({container,sectionText,setCoff}) {
+export default function Coifficient({ container, sectionText, setCoff }) {
   const isMobile = useIsMobile()
   const isTablet = useIsTablet()
   const [activeRects, setActiveRects] = useState(isMobile ? [2, 9, 15, 21, 28, 35, 42] : [2, 9, 15, 21, 28, 35, 42]);
@@ -253,15 +253,15 @@ export default function Coifficient({container,sectionText,setCoff}) {
     const dataItem = data.find((item) => item.stroked === index);
     setItem(dataItem);
 
-    if(setCoff){
+    if (setCoff) {
       setCoff(dataItem.title)
     }
 
-  
+
     if (dataItem) {
       // Determine the end path based on device type
-      const endPath = !isMobile ? dataItem.endpath + (isTablet ? "H366.5H446.5V170.5H515"  : "  H566.5") : " L366.44 500.269 H170.5 V540 H168  ";
-  
+      const endPath = !isMobile ? dataItem.endpath + (isTablet ? "H366.5H446.5V170.5H515" : "  H566.5") : " L366.44 500.269 H170.5 V540 H168  ";
+
       // Determine which indexes to use based on device type
       const targetIndexes = isMobile ? targetIndexesMobile : targetIndexesTablet;
 
@@ -405,7 +405,7 @@ export default function Coifficient({container,sectionText,setCoff}) {
             />
           </svg>
         </div>
-        <div className=" bg-black md:w-3/6 pl-0 xs:pl-5 lg:pl-20 -mt-5 xs:mt-0 flex flex-col h-full justify-center items-start " >
+        <div className=" bg-black  pb-20 md:w-3/6 pl-0 xs:pl-5 lg:pl-0 -mt-5 xs:mt-0 flex flex-col h-full justify-center items-start " >
           {isLoading ? (
             <BlurIn>
               <h1 className=" text-white text-3xl xl:text-4xl font-semibold ">{item?.title}</h1>

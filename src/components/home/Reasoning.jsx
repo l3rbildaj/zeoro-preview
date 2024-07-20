@@ -58,7 +58,7 @@ function Reasoning() {
         }
         setState(3)
       }
-      else {
+      if (v <= .6 && v >= 0) {
         if (state === 1) {
           return
         }

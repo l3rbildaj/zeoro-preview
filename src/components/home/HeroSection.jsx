@@ -48,7 +48,7 @@ function HeroSection() {
   return (
     <>
       <motion.div className="fixed w-screen pointer-events-none  md:h-screen top-0 left-0 z-10 ">
-        <Canvas className="w-full pointer-events-none h-full">
+        <Canvas className="w-screen pointer-events-none h-screen border-0 ">
           {isLoaded && !isMobile ? <WebglEffect /> : null}
         </Canvas>
       </motion.div>
