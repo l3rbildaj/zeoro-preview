@@ -125,7 +125,7 @@ function Exe() {
       <ClietReview
         span={"Happy Client"}
         img={client_img}
-        name={"Bachir RZAMA"}
+        name={"Omar Zouhair"}
         textcolor={" text-white "}
         review={
           "“I'm proud to showcase a series of recent branding projects that we passionately brought to life. Each project was approached with a deep understanding of our clients' unique objectives. From crafting compelling visual identities to designing cohesive brand systems, we ensured that every element resonated authentically with our clients' target audiences.”"
