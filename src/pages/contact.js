@@ -5,18 +5,63 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import profile_pic from "@/assets/exe/profile__pic.png";
+import img3 from "@/assets/img3.png";
 import Coifficient from "@/components/home/Coifficient";
 import AnimatedButton from "@/components/ui/Button";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import img3 from "@/assets/img3.png";
 
 function Contact() {
 
 
   const [sending, setSending] = useState(false);
   const [coff, setCoff] = useState()
+  const [formState, setFormState] = useState({
+    name: "",
+    company_email: "",
+    company_name: "",
+    project_idea: "",
+    showNameSvg: false,
+    showEmailSvg: false,
+    showCompanyNameSvg: false,
+    showIdeaSvg: false,
+  });
+
+  useEffect(() => {
+
+    const isValidEmail = (email) => {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    };
+
+
+
+    setFormState((prevState) => ({
+      ...prevState,
+      showNameSvg: prevState.name.trim() !== "",
+      showEmailSvg: isValidEmail(prevState.company_email.trim()),
+      showCompanyNameSvg: prevState.company_name.trim() !== "",
+      showIdeaSvg: prevState.project_idea.trim() !== "",
+    }));
+  }, [formState.name, formState.company_email, formState.project_idea, formState.company_name]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const svgPathVariants = {
+    hidden: { pathLength: 0 },
+    visible: { pathLength: 1 },
+  };
+
+
+
+
   const handleSubmit = (e) => {
     setSending(true);
 
@@ -122,21 +167,29 @@ function Contact() {
                 autoComplete="off"
                 spellCheck="false"
                 placeholder="Your Full Name"
+                onChange={handleChange}
               />
-              <svg
-                className=" absolute right-5 top-[65%] translate-y-[-50%] "
-                width="29"
-                height="22"
-                viewBox="0 0 29 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 10.3023L10.4615 19L27 2"
-                  stroke="white"
-                  stroke-width="3.5"
-                />
-              </svg>
+              {formState.showNameSvg && (
+                <motion.svg
+                  className="absolute right-5 top-[65%] translate-y-[-50%]"
+                  width="29"
+                  height="22"
+                  viewBox="0 0 29 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  initial="hidden"
+                  animate="visible"
+                  variants={svgPathVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.path
+                    d="M2 10.3023L10.4615 19L27 2"
+                    stroke="white"
+                    strokeWidth="3.5"
+                    variants={svgPathVariants}
+                  />
+                </motion.svg>
+              )}
             </div>
             <div className=" relative ">
               <label className=" text-white ">Company Email</label>
@@ -146,23 +199,31 @@ function Contact() {
                 className=" border border-white w-full rounded-[5px] text-white bg-[#121212] py-5 px-5 mt-1 placeholder:text-[#BABABA] "
                 autoComplete="off"
                 spellCheck="false"
+                onChange={handleChange}
 
                 placeholder="you@yourcompany.com"
               />
-              <svg
-                className=" absolute right-5 top-[65%] translate-y-[-50%] "
-                width="29"
-                height="22"
-                viewBox="0 0 29 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 10.3023L10.4615 19L27 2"
-                  stroke="white"
-                  stroke-width="3.5"
-                />
-              </svg>
+              {formState.showEmailSvg && (
+                <motion.svg
+                  className="absolute right-5 top-[65%] translate-y-[-50%]"
+                  width="29"
+                  height="22"
+                  viewBox="0 0 29 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  initial="hidden"
+                  animate="visible"
+                  variants={svgPathVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.path
+                    d="M2 10.3023L10.4615 19L27 2"
+                    stroke="white"
+                    strokeWidth="3.5"
+                    variants={svgPathVariants}
+                  />
+                </motion.svg>
+              )}
             </div>
             <div className=" relative ">
               <label className=" text-white ">Company Name</label>
@@ -172,22 +233,26 @@ function Contact() {
                 className=" border border-white w-full rounded-[5px] text-white py-5 px-5 mt-1 bg-[#121212] placeholder:text-[#BABABA] "
                 autoComplete="off"
                 spellCheck="false"
+                onChange={handleChange}
                 placeholder="Nice to meet you!"
               />
-              <svg
+              {formState.showCompanyNameSvg && <motion.svg
                 className=" absolute right-5 top-[65%] translate-y-[-50%] "
                 width="29"
                 height="22"
                 viewBox="0 0 29 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                variants={svgPathVariants}
+                transition={{ duration: 0.5 }}
               >
-                <path
+                <motion.path
                   d="M2 10.3023L10.4615 19L27 2"
                   stroke="white"
                   stroke-width="3.5"
+                  variants={svgPathVariants}
                 />
-              </svg>
+              </motion.svg>}
             </div>
             <div className=" relative ">
               <label className=" text-white ">Your Project’s Idea</label>
@@ -198,21 +263,30 @@ function Contact() {
                 spellCheck="false"
                 placeholder="In One Line"
                 name="project_idea"
+                onChange={handleChange}
+
               />
-              <svg
-                className=" absolute right-5 top-[65%] translate-y-[-50%] "
-                width="29"
-                height="22"
-                viewBox="0 0 29 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 10.3023L10.4615 19L27 2"
-                  stroke="white"
-                  stroke-width="3.5"
-                />
-              </svg>
+              {formState.showIdeaSvg && (
+                <motion.svg
+                  className="absolute right-5 top-[65%] translate-y-[-50%]"
+                  width="29"
+                  height="22"
+                  viewBox="0 0 29 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  initial="hidden"
+                  animate="visible"
+                  variants={svgPathVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.path
+                    d="M2 10.3023L10.4615 19L27 2"
+                    stroke="white"
+                    strokeWidth="3.5"
+                    variants={svgPathVariants}
+                  />
+                </motion.svg>
+              )}
             </div>
             {/* <div className=" col-span-2 w-full  " >
               <motion.button
@@ -248,26 +322,26 @@ function Contact() {
                 )}
               </motion.button>
             </div> */}
-        <Coifficient setCoff={setCoff} sectionText={"SELECT YOUR COEFFICIENTS"} container={"relative my-20 md:mt-36 md:my-40 col-span-2   "} />
-        <div className=" my-10 col-span-2 ">
-          <div className=" relative w-full  ">
-            <Image
-              src={img3}
-              alt=""
-              width={2000}
-              height={2000}
-              quality={100}
-              className="   object-cover w-full -ml-0   "
-            />
-            <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
-              <button type="submit" className=" w-full mx-auto justify-center items-center flex ">
-                <AnimatedButton
-                  text={"SEND US YOUR EQUATION"}
+            <Coifficient setCoff={setCoff} sectionText={"SELECT YOUR COEFFICIENTS"} container={"relative my-20 md:mt-36 md:my-40 col-span-2   "} />
+            <div className=" my-10 col-span-2 ">
+              <div className=" relative w-full  ">
+                <Image
+                  src={img3}
+                  alt=""
+                  width={2000}
+                  height={2000}
+                  quality={100}
+                  className="   object-cover w-full -ml-0   "
                 />
-              </button>
+                <div className=" absolute top-[50%] sm:top-[58%]  left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
+                  <button type="submit" className=" w-full mx-auto justify-center items-center flex ">
+                    <AnimatedButton
+                      text={"SEND US YOUR EQUATION"}
+                    />
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
           </form>
         </div>
       </div>

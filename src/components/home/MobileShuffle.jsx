@@ -63,6 +63,7 @@ const data = [
     color: "bg-green-500",
     grid: "col-span-4 row-span-3",
     img: img2,
+    link: "seafena",
   },
   {
     id: 2,
@@ -83,7 +84,7 @@ const data = [
     color: "bg-gray-500",
     grid: "col-span-1 row-span-1",
     img: img5,
-    link: "",
+    link: "teuser",
   },
 ];
 

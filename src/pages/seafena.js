@@ -109,12 +109,12 @@ function Seafena() {
                 classNameImg=" h-[400px] md:h-full object-right object-cover  "
                 src={img2}
             />
-            <div className=" grid  grid-cols-1 md:grid-cols-2 gap-8 md:gap-14  mt-36 ">
+            {/* <div className=" grid  grid-cols-1 md:grid-cols-2 gap-8 md:gap-14  mt-36 ">
                 <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img3} />
                 <RevealImage className="w-full  relative overflow-hidden bg-white/20" src={img4} />
                 <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img5} />
                 <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img6} />
-            </div>
+            </div> */}
             <RevealImage
                 className="w-full h-full relative overflow-hidden mt-32 "
                 src={img7}
@@ -166,9 +166,9 @@ export default Seafena;
 
 export async function getStaticProps({ locale }) {
     return {
-        props: {
-            messages: (await import("../../lang/${locale}.json")).default,
-            locale: locale,
-        },
+      props: {
+        messages: (await import(`../../lang/${locale}.json`)).default,
+        locale: locale,
+      },
     };
-}
+  }

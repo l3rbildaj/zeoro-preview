@@ -45,7 +45,7 @@ function Exe() {
           }
           stagger={0.01}
           className={
-            " mt-5  text-xl sm:text-2xl flex flex-wrap max-w-[600px]  font-extrabold "
+            " mt-5  text-xl text-white sm:text-2xl flex flex-wrap max-w-[600px]  font-extrabold "
           }
         />
         <div className=" flex gap-10 mt-5 ">
@@ -96,7 +96,7 @@ function Exe() {
         />
         <AnimatedText
           text={
-            "“Pony really understood what we were trying achieve and was very flexible and responsive. They challenged our thinking and took some smart risk in the design which turned out to be great. I would highly recommd them and it's great that we cann say they added value.”"
+            "Branding doesn't consist of just a logo, an identity goes beyond anything visual, each brand represents an array of feelings and emotions. Our approach is special, we don't start with sketches, we start with mathematical discoveries."
           }
           stagger={0.01}
           className={
@@ -126,21 +126,21 @@ function Exe() {
         span={"Happy Client"}
         img={client_img}
         name={"Bachir RZAMA"}
-        textcolor={" white "}
+        textcolor={" text-white "}
         review={
           "“I'm proud to showcase a series of recent branding projects that we passionately brought to life. Each project was approached with a deep understanding of our clients' unique objectives. From crafting compelling visual identities to designing cohesive brand systems, we ensured that every element resonated authentically with our clients' target audiences.”"
         }
       />
       <Banner />
       <FlickerAnimation />
-      <div className=" px-5 md:px-10 max-w-[1000px]  my-20 ">
+      <div className=" text-white px-5 md:px-10 max-w-[1000px]  my-20 ">
         <AnimatedText
           text={
             "In math, we find certainty among variables. Zoero applies this principle to navigate complex business landscapes."
           }
           stagger={0.01}
           className={
-            " mt-10 text-xl !leading-[2.3] py-10 flex flex-wrap font-secondary  mx-auto !text-white  "
+            " mt-10 text-xl !text-white !leading-[2.3] py-10 flex flex-wrap font-secondary  mx-auto   "
           }
         />
         <motion.div

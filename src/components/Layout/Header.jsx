@@ -9,7 +9,7 @@ const Header = () => {
   const ref = useRef(null);
 
   return (
-    <header className="!h-15 z-50 w-full">
+    <header className="!h-15 z-50 w-full bg-transparent">
       <div className=" px-4 sm:px-6 py-4 flex justify-between items-start mx-auto">
         <div className="flex gap-3 justify-center items-center text-3xl font-bold uppercase">
           <Link href={"/"}>
@@ -17,12 +17,12 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex h-15 relative flex-col text-white/50 gap-1 items-end">
-          <div className="gap-1 items-end flex text-xs flex-col absolute">
+          <div className=" gap-2 sm:gap-2 items-end flex text-xs flex-col absolute">
 
-            <AnimatedLink title={'REASONING'} scroll url='reasoning' />
-            <AnimatedLink title={'EXPERIMENTS'} scroll url={'experiments'} />
-            <AnimatedLink title={'COEFFICIENTS'} scroll url={'coifficient'} />
-            <AnimatedLink title={'LET’S SOLVE'} url={'/contact'} />
+            <AnimatedLink textsize={" text-[1rem] sm:text-[1.2rem]"} title={'REASONING'} scroll url='reasoning' />
+            <AnimatedLink textsize={" text-[1rem] sm:text-[1.2rem]"} title={'EXPERIMENTS'} scroll url={'experiments'} />
+            <AnimatedLink textsize={" text-[1rem] sm:text-[1.2rem]"} title={'COEFFICIENTS'} scroll url={'coifficient'} />
+            <AnimatedLink textsize={" text-[1rem] sm:text-[1.2rem]"} title={'LET’S SOLVE'} url={'/contact'} />
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@ const AnimatedWord = ({
   title,
   animations,
   isHovered,
-  textsize = "1rem"
+  textsize = "text-[1.2rem]"
 }) => (
   <motion.span className='whitespace-nowrap relative'
     variants={titleAnimation}
@@ -149,9 +149,9 @@ const AnimatedWord = ({
   >
     {title.split('').map((char, i) =>
       char === ' ' ? (
-        <motion.span className={"relative inline-block whitespace-nowrap text-[${ textsize }]"} key={i}>&nbsp;</motion.span>
+        <motion.span className={`relative inline-block whitespace-nowrap ${textsize}`} key={i}>&nbsp;</motion.span>
       ) : (
-        <motion.span className={"relative inline-block whitespace-nowrap text-[${ textsize }]"} variants={animations} key={i} >
+        <motion.span className={`relative inline-block whitespace-nowrap ${textsize}`} variants={animations} key={i} >
           {char}
         </motion.span >
       )
