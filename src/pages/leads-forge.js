@@ -41,7 +41,7 @@ function LeadsForge() {
           }
           stagger={0.01}
           className={
-            " mt-5  text-xl sm:text-2xl flex flex-wrap max-w-[450px]  font-extrabold "
+            " mt-5  text-white text-xl sm:text-2xl flex flex-wrap max-w-[450px]  font-extrabold "
           }
         />
         <div className=" flex gap-10 mt-5 ">

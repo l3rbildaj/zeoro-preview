@@ -44,8 +44,8 @@ const MedalItem = ({ delay, itemRef ,number}) => {
         <motion.div initial={{ opacity: 0, translateY: 100 }} animate={{ opacity: inview ? 1 : 0, translateY: inview ? 0 : 100 }} transition={{ delay: delay * .1, ease: 'easeInOut' }} className="flex flex-col z-50 gap-10">
             <div className="h-full py-5 bg-white/20 w-full"><MedalFlickerAnimation /></div>
             <div className="flex flex-col gap-0">
-                <p className="text-4xl text-white capitalize">Award {number}</p>
-                <p className="text-xl text-white/50">Coming Soon</p>
+                <p className="text-3xl text-white capitalize">Award {number}</p>
+                <p className="text-lg text-white/50">Coming Soon</p>
             </div>
         </motion.div>
     )

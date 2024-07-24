@@ -12,11 +12,11 @@ function index() {
   return (
     <Layout>
       <div className=" w-full mt-40">
-        <div className=" flex text-white  flex-col gap-2 max-w-5xl mx-auto">
+        <div className=" flex text-white px-5 flex-col gap-2 max-w-5xl mx-auto">
           <AnimatedText
             text={"Privacy Policy"}
             stagger={0.05}
-            className={" mt-10 text-7xl flex font-extrabold "}
+            className={" mt-10 text-3xl md:text-4xl lg:text-7xl flex font-extrabold "}
           />
           <p className="mb-5 text-base  uppercase">
             Last updated as of October 17, 2022

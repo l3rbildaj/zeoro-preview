@@ -20,7 +20,7 @@ const Footer = () => {
               <AnimatedLink url='/contact' title='Contact us' />
             </div>
           </div>
-          <p className="text-2xl text-white ">© Zoero Labs LTD.<br />
+          <p className="text-2xl text-white">© Zoero Labs LTD.<br />
             All Rights Reserved 2024.</p>
           <div className=" left-0 w-full  flex justify-center items-center text-white">
             Equations Solved by <span className='text-violet-600 mx-2 cursor-pointer'>@Omar</span> and <span className='text-violet-600 mx-2 cursor-pointer'>@Zakaria</span>

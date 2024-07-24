@@ -17,7 +17,7 @@ function Banner({ text, href }) {
         quality={100}
         className="   object-cover w-full -ml-0   "
       />
-      <div className=" absolute top-[50%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
+      <div className=" absolute top-[50%] sm:top-[58%] left-[50%] text-xs z-30 translate-x-[-50%] translate-y-[-50%] w-5/6 sm:w-auto mx-auto ">
         <Link href={href || "/contact"} className=" w-full mx-auto justify-center items-center flex ">
           <AnimatedButton
             text={text}

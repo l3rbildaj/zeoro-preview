@@ -122,7 +122,7 @@ function Exe() {
         className="w-full h-full relative overflow-hidden mt-20 "
         src={img7}
       />
-      <ClietReview
+      {/* <ClietReview
         span={"Happy Client"}
         img={client_img}
         name={"Bachir RZAMA"}
@@ -130,7 +130,7 @@ function Exe() {
         review={
           "“I'm proud to showcase a series of recent branding projects that we passionately brought to life. Each project was approached with a deep understanding of our clients' unique objectives. From crafting compelling visual identities to designing cohesive brand systems, we ensured that every element resonated authentically with our clients' target audiences.”"
         }
-      />
+      /> */}
       <Banner />
       <FlickerAnimation />
       <div className="  px-5 md:px-10 max-w-[1000px]   my-20 ">
