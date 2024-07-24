@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const lines = Array(30).fill(0); // Adjust the number of lines as needed
 
-const AnimatedButton = ({text="SEND US YOUR EQUATION"}) => {
+const AnimatedButton = ({ text = "SEND US YOUR EQUATION" }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -14,18 +14,17 @@ const AnimatedButton = ({text="SEND US YOUR EQUATION"}) => {
         borderColor: "#00ffff",
         boxShadow: "0 0 10px #00ffff",
       }}
-     
+
       style={{ borderColor: "#22505D", transition: "all 0.3s ease" }}
     >
       {isHovered && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex w-full items-center justify-center">
           {lines.map((_, index) => {
             const isLeftSide = index < lines.length / 2;
             const position = isLeftSide
               ? `${50 - ((index + 1) / (lines.length / 2)) * 50}%`
-              : `${
-                  50 + ((index - lines.length / 2) / (lines.length / 2)) * 50
-                }%`;
+              : `${50 + ((index - lines.length / 2) / (lines.length / 2)) * 50
+              }%`;
 
             return (
               <motion.div
