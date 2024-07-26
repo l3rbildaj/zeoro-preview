@@ -144,28 +144,26 @@ function Exe() {
           }
         />
         <motion.div
-          initial={{ opacity: 0, translateY: 50 }}
-          whileInView={{ opacity: 1, translateY: 0 }}
-          transition={{ duration: 1, ease: "easeIn" }}
-          viewport={{ once: true }}
-          className=" flex items-center gap-3  "
-        >
-          <Image
-            src={profile_pic}
-            alt="client_img"
-            width={3000}
-            height={3000}
-            quality={100}
-            className=" h-12 w-12 sm:w-16 sm:h-16 object-cover"
-            loading="lazy"
-          />
-          <div>
-            <h2 className=" text-white font-secondary text-xs md:text-base  ">Zakaria Ambari</h2>
-            <span className=" text-[#595959] capitalize  ">
-              Zœro Mathematician{" "}
-            </span>
-          </div>
-        </motion.div>
+      initial={{ opacity: 0, translateY: 50 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 1, ease: "easeIn" }}
+      viewport={{once:true}}
+      className=" flex items-center  gap-3   "
+    >
+      <Image
+        src={profile_pic}
+        alt="client_img"
+        width={3000}
+        height={3000}
+        quality={100}
+        className=" h-12 w-12 sm:w-16 sm:h-16 object-cover  "
+        loading="lazy"
+      />
+      <div  className=" flex flex-col gap-1.5 h-fit pt-2 ">
+        <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
+        <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
+      </div>
+    </motion.div>
       </div>
     </Layout>
   );

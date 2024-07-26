@@ -125,7 +125,7 @@ function LeadsForge() {
       whileInView={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 1, ease: "easeIn" }}
       viewport={{once:true}}
-      className=" flex items-center gap-3  "
+      className=" flex items-center  gap-3   "
     >
       <Image
         src={profile_pic}
@@ -133,10 +133,10 @@ function LeadsForge() {
         width={3000}
         height={3000}
         quality={100}
-        className=" h-12 w-12 sm:w-16 sm:h-16 object-cover"
+        className=" h-12 w-12 sm:w-16 sm:h-16 object-cover  "
         loading="lazy"
       />
-      <div>
+      <div  className=" flex flex-col gap-1.5 h-fit pt-2 ">
         <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
         <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
       </div>
