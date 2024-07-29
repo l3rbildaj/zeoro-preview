@@ -40,11 +40,11 @@ function Seafena() {
         </div>
         <AnimatedText
           text={
-            "Deep Calculus Dive into some of our most recent brand identity and strategy projects."
+            "We worked with Teuser to simplify and optimize their ops,solving complex problems with precision and efficiency."
           }
           stagger={0.01}
           className={
-            " mt-5 text-xl sm:text-2xl text-white sm:text-[#FF0000] flex flex-wrap max-w-[670px]  font-extrabold "
+            " mt-5 text-xl sm:text-2xl text-white flex flex-wrap max-w-[750px]  font-extrabold "
           }
         />
         <div className=" flex gap-10 mt-5 ">
@@ -95,11 +95,11 @@ function Seafena() {
         />
         <AnimatedText
           text={
-            "“Pony really understood what we were trying achieve and was very flexible and responsive. They challenged our thinking and took some smart risk in the design which turned out to be great. I would highly recomm dthem and it's great that we cann say they added value.”"
+            "We developed a comprehensive solution encompassing branding, website, and web app design. Our work focused on creating a cohesive and user-centric experience that not only enhanced their brand identity but also streamlined their logistics operations through a sleek and functional digital interface."
           }
           stagger={0.01}
           className={
-            "  mt-5 text-xl sm:text-2xl flex text-white sm:text-[#FF0000] flex-wrap max-w-[500px] "
+            "  mt-5 text-xl sm:text-2xl flex text-white  flex-wrap max-w-[500px] "
           }
         />
       </div>
@@ -111,9 +111,11 @@ function Seafena() {
         className="w-full flex sm:hidden relative my-20 overflow-hidden"
         src={img7}
       />
-      <div className=" grid grid-cols-1 md:grid-cols-2  gap-8 md:gap-14  mt-36 ">
-        <div className=" flex items-center justify-center text-white sm:text-[#FF0000] mb-10 md:mb-0 text-6xl md:text-5xl lg:text-7xl font-semibold md:text-center px-5 ">
-          WE SOLVE EQUATIONS
+      <div className=" grid grid-cols-1 md:grid-cols-2  gap-8 md:gap-14  mt-36 mb-20 ">
+        <div className=" flex items-center justify-center text-white  mb-10 md:mb-0 text-6xl md:text-5xl lg:text-7xl font-semibold  px-5 ">
+          Logistics<br/>
+          Redefined<br/>
+          Digitally.
         </div>
         <RevealImage
           className="w-full  relative  overflow-hidden bg-white/20"
@@ -129,11 +131,11 @@ function Seafena() {
         />
         {/* <RevealImage className="w-full  relative  overflow-hidden bg-white/20" src={img6} /> */}
       </div>
-      <RevealImage
+      {/* <RevealImage
         className="w-full h-full relative overflow-hidden mt-32 "
         src={img6}
-      />
-      <ClietReview
+      /> */}
+      {/* <ClietReview
         span={"Happy Client"}
         img={client_img}
         name={"salah moutaouakil"}
@@ -141,7 +143,7 @@ function Seafena() {
         review={
           "“As CEO, I see our path much like navigating the vast ocean, constantly adjusting to the winds of market trends and technological shifts. Our collaboration with Zoero has been pivotal in developing our innovative digital product, blending their tech prowess with our industry insights to forge ahead into new waters of opportunity and growth.”"
         }
-      />
+      /> */}
       <Banner />
       <FlickerAnimation />
       <div className=" px-5 md:px-10 max-w-[1000px]  my-20 ">
@@ -155,26 +157,26 @@ function Seafena() {
           }
         />
         <motion.div
-      initial={{ opacity: 0, translateY: 50 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 1, ease: "easeIn" }}
-      viewport={{once:true}}
-      className=" flex items-center  gap-3   "
-    >
-      <Image
-        src={profile_pic}
-        alt="client_img"
-        width={3000}
-        height={3000}
-        quality={100}
-        className=" h-12 w-12 sm:w-16 sm:h-16 object-cover  "
-        loading="lazy"
-      />
-      <div  className=" flex flex-col gap-1.5 h-fit pt-2 ">
-        <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
-        <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
-      </div>
-    </motion.div>
+          initial={{ opacity: 0, translateY: 50 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 1, ease: "easeIn" }}
+          viewport={{ once: true }}
+          className=" flex items-center  gap-3   "
+        >
+          <Image
+            src={profile_pic}
+            alt="client_img"
+            width={3000}
+            height={3000}
+            quality={100}
+            className=" h-12 w-12 sm:w-16 sm:h-16 object-cover  "
+            loading="lazy"
+          />
+          <div className=" flex flex-col gap-1.5 h-fit pt-2 ">
+            <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
+            <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
+          </div>
+        </motion.div>
       </div>
     </Layout>
   );
