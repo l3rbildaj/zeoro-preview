@@ -11,6 +11,7 @@ import AnimatedButton from "@/components/ui/Button";
 import emailjs from "@emailjs/browser";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import Head from "next/head";
 
 function Contact() {
 
@@ -113,6 +114,9 @@ function Contact() {
 
   return (
     <Layout>
+      <Head>
+        <title>Zoero - Contact</title>
+      </Head>
       <Toaster
         toastOptions={{
           className: "rounded-full",

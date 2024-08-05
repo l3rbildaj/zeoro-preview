@@ -6,11 +6,15 @@ import Banner from "@/components/ui/Banner";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import AnimatedText from "@/components/ui/TextAnimation";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import Image from "next/image";
 
 function index() {
   return (
     <Layout>
+       <Head>
+        <title>Zoero - Terms and Conditions</title>
+      </Head>
       <div className=" w-full mt-40">
         <div className=" flex text-white  flex-col gap-2 max-w-5xl mx-auto">
           <AnimatedText

@@ -17,10 +17,14 @@ import ClietReview from "@/components/ui/ClientReview";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
+import Head from "next/head";
 
 function Exe() {
   return (
     <Layout>
+       <Head>
+        <title>Zoero - Domain Expansion</title>
+      </Head>
       <div className=" px-5 md:px-10 ">
         <div className=" flex text-white items-end ">
           <AnimatedText
