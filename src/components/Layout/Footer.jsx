@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="flex flex-row justify-between">
         <div className="flex gap-10 flex-col py-10">
           <Logo />
-          <div className="grid md:hidden  grid-cols-2 text-lg text-white/50 gap-10 flex-col py-10">
+          <div className="grid md:hidden  grid-cols-2 text-lg text-white/50 gap-10 z-40 flex-col py-10">
             <div className="flex flex-col gap-3 z-40">
               <AnimatedLink url='/' title='The Science' />
               <AnimatedLink url='/' title='Millenniums' />
