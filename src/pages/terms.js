@@ -6,20 +6,24 @@ import Banner from "@/components/ui/Banner";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import AnimatedText from "@/components/ui/TextAnimation";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import Image from "next/image";
 
 function index() {
   return (
     <Layout>
+       <Head>
+        <title>Zoero - Terms and Conditions</title>
+      </Head>
       <div className=" w-full mt-40">
-        <div className=" flex text-white px-5 flex-col gap-2 max-w-5xl mx-auto">
+        <div className=" flex text-white  flex-col gap-2 max-w-5xl mx-auto">
           <AnimatedText
-            text={"Privacy Policy"}
+            text={"Terms and Conditions"}
             stagger={0.05}
             className={" mt-10 text-3xl md:text-4xl lg:text-7xl flex font-extrabold "}
           />
           <p className="mb-5 text-base  uppercase">
-            Last updated as of October 17, 2022
+            Last updated as of August 05, 2024
           </p>
         </div>
         <section>
@@ -27,81 +31,166 @@ function index() {
             <div className="mx-auto w-full max-w-5xl py-12 md:py-16 lg:py-20">
               <div className="mb-6 flex flex-col items-start gap-y-3">
                 <p className="text-sm font-bold  sm:text-3xl ">
-                  Cookies Settings
+                  Introduction
                 </p>
                 <p className="text-sm sm:text-base">
-                  Sit vel orci et malesuada nam eu. Hac sed auctor mus ipsum
-                  amet. Varius sed nisl leo, aliquet. In ultrices eget
-                  fermentum, aliquet dictum nec mattis. Fermentum quam blandit
-                  dictum ipsum est. Congue ac urna, id sed consectetur.
-                  Consectetur purus in lorem in volutpat orci, magna. Amet, nibh
-                  dictum augue vitae sit facilisi tortor orci. Vitae, tempor
-                  arcu elit, eu. Egestas at sed quis tempor, quam. Libero dictum
-                  placerat enim cras facilisis blandit non tortor. Etiam arcu
-                  morbi tincidunt sit vitae, morbi sit viverra vel. Ut risus
-                  neque, tortor facilisis arcu
+                  Welcome to Zœro (hereinafter referred to as &ldquo;the Company&ldquo;, &ldquo;we&ldquo;, &ldquo;us&ldquo;, or &ldquo;our&ldquo;).
+                  These Terms and Conditions govern your use of our website, located at zoerolabs.com (the &ldquo;Website&ldquo;), and the services provided by the Company. By accessing or using our Website, you agree to comply with and be bound by these Terms and Conditions. If you do not agree to these Terms and Conditions, please do not use our Website.
+
                 </p>
               </div>
 
               <div className="mb-6 flex flex-col items-start gap-y-3">
-                <p className="font-bold sm:text-3xl">Privacy Settings</p>
+                <p className="font-bold sm:text-3xl">Services</p>
                 <p className="text-sm sm:text-base">
-                  Arcu eget ut tortor eros in et risus. Egestas ipsum dui,
-                  fringilla odio mattis et. Amet, sem posuere lacus, et placerat
-                  consectetur est nunc. Tempus nibh nisl justo, quam tincidunt
-                  porta cras aliquam. Eget gravida posuere neque consequat
-                  venenatis, ipsum in. Cras aliquet faucibus egestas quisque
-                  arcu amet. Nec dui tempus, non ornare. Ornare tellus euismod
-                  ornare neque platea lobortis accumsan accumsan. Nunc
-                  scelerisque duis in amet, vitae sed felis nascetur congue.
-                  <br />
-                  <br />
-                  Commodo volutpat placerat molestie morbi quis lorem ante
-                  scelerisque. Sit pellentesque porttitor mattis tellus blandit.
-                  Erat quisque massa dolor faucibus erat elementum id. Non
-                  feugiat neque magna sed accumsan. Nulla elit commodo nunc id.
-                  Id sit senectus vestibulum eget tortor risus vestibulum.
-                  Faucibus facilisi commodo aliquam aliquet massa porttitor
-                  egestas. Enim quam consectetur bibendum sodales ornare
-                  faucibus at egestas tincidunt. Interdum egestas pellentesque
-                  quisque egestas aliquam varius est, velit nec. Arcu commodo
-                  scelerisque odio posuere amet sit consectetur. Auctor
-                  tristique posuere egestas aliquet orci egestas.
+                  Zœro is an online digital agency specializing in brand creation, logo design, MVP development, web design, and web development (collectively, the &ldquo;Services&ldquo;).
                 </p>
               </div>
 
               <div className="mb-6 flex flex-col items-start gap-y-3">
-                <p className="font-bold sm:text-3xl">Usage Settings</p>
+                <p className="font-bold sm:text-3xl">Use of the Website</p>
                 <p className="text-sm sm:text-base">
-                  Sagittis dolor id adipiscing euismod gravida nibh platea
-                  sapien, elementum. Nulla neque, curabitur velit integer
-                  ultricies feugiat etiam. Donec magna pharetra nullam mauris.
-                  Nec, fermentum, varius habitasse arcu habitasse in et. Ut
-                  cursus id nulla et ac imperdiet pellentesque dui. At et
-                  egestas sed pellentesque tristique cras hac. Egestas diam
-                  velit dignissim pellentesque leo, velit vitae euismod. At in
-                  odio nunc, etiam nunc, turpis praesent sit. Tristique
-                  adipiscing metus consectetur lacus nam fames aenean etiam.
-                  Ante tincidunt felis metus consectetur ipsum, ultrices
-                  condimentum enim ipsum. Sed lacus mattis pretium sed neque
-                  ornare dictum erat. Habitasse nulla convallis sagittis sed.
-                  Fames suspendisse ut nisl scelerisque diam lacus.
-                  <br />
-                  <br />
-                  Nullam gravida nisl ultrices risus augue risus dolor dis.
-                  Vestibulum, sed consectetur vitae elit sagittis ipsum
-                  pellentesque dapibus. Tellus elementum tempor leo nibh
-                  fermentum, et enim, rhoncus in. Orci, blandit sodales quam
-                  tellus leo justo, viverra vestibulum. Sapien vulputate
-                  scelerisque varius sit lacus, in mauris ac. Sed faucibus
-                  vulputate sit senectus tortor amet accumsan et dolor. Euismod
-                  tincidunt feugiat ac mattis eget cum in nunc. Nulla pharetra
-                  vitae, et, ante urna, fringilla. Et nec nisl facilisis
-                  habitant est tortor. Erat consequat habitasse cursus placerat
-                  ornare sit scelerisque lectus. Dolor dictum proin etiam.
+                  <ul className=" list-decimal ">
+                    <li><strong>Eligibility:</strong>{" "}
+                      By using our Website, you represent and warrant that you are at least 18 years old and have the legal capacity to enter into these Terms and Conditions.
+                    </li>
+                    <li><strong>Account Information:</strong>{" "}
+                      If you use our contact form, you agree to provide accurate and complete information. You are responsible for maintaining the confidentiality of your personal information.
+                    </li>
+                    <li><strong>Prohibited Conduct:</strong>{" "}
+                      You agree not to use the Website for any unlawful purpose or in any way that could harm, disable, overburden, or impair the Website.
+                    </li>
+                  </ul>
                 </p>
               </div>
-            </div>
+
+
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Collection of Information                </p>
+                <p className="text-sm sm:text-base">
+                  When you use the &ldquo;Contact Us&ldquo; form on our Website, we collect the following information: <br />
+                  <ul className=" list-disc ">
+                    <li>Your name
+                    </li>
+                    <li>Your email address
+                    </li>
+                    <li>
+                      Your business name
+                    </li>
+                    <li>
+                      Your business idea
+                    </li>
+                  </ul> <br />
+                  We use this information solely for the purpose of responding to your inquiries and providing our Services.
+
+                </p>
+              </div>
+
+
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Privacy Policy                </p>
+                <p className="text-sm sm:text-base">
+                Your use of the Website is also governed by our Privacy Policy, which is incorporated into these Terms and Conditions by reference. Please review our Privacy Policy to understand our practices regarding the collection, use, and disclosure of your personal information.
+
+                </p>
+              </div>
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Intellectual Property
+                </p>
+                <p className="text-sm sm:text-base">
+                All content on the Website, including but not limited to text, graphics, logos, images, and software, is the property of Zœro or its content suppliers and is protected by international copyright and trademark laws. Unauthorized use of any content on the Website is strictly prohibited.
+
+
+                </p>
+              </div>
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Limitation of Liability
+
+                </p>
+                <p className="text-sm sm:text-base">
+                To the fullest extent permitted by law, Zœro shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:
+                <ul className=" list-disc ">
+                    <li>Your use of the Website or Services
+
+                    </li>
+                    <li>Any unauthorized access to or use of our servers and/or any personal information stored therein
+
+                    </li>
+                    <li>
+                    Any interruption or cessation of transmission to or from our Website
+                    </li>
+                  
+                  </ul> <br />
+
+
+                </p>
+              </div>
+
+
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Indemnification
+
+
+                </p>
+                <p className="text-sm sm:text-base">
+                You agree to indemnify and hold harmless Zœro, its affiliates, and their respective directors, officers, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney&apos;s fees) arising from:
+                <ul className=" list-disc ">
+                    <li>Your use of and access to the Website and Services
+
+
+                    </li>
+                    <li>Your violation of any term of these Terms and Conditions
+
+                    </li>
+                    <li>
+                    Your violation of any third-party right, including without limitation any copyright, property, or privacy right
+
+                    </li>
+                  
+                  </ul> <br />
+
+
+                </p>
+              </div>
+              
+
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Governing Law
+                </p>
+                <p className="text-sm sm:text-base">
+                These Terms and Conditions shall be governed by and construed in accordance with the laws of London, England, without regard to its conflict of law principles. Any disputes arising out of or in connection with these Terms and Conditions shall be resolved exclusively in the courts located in London, England.
+
+
+                </p>
+              </div>
+
+
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Changes to Terms and Conditions
+
+                </p>
+                <p className="text-sm sm:text-base">
+                We reserve the right to modify or replace these Terms and Conditions at any time. Any changes will be effective immediately upon posting on the Website. Your continued use of the Website following the posting of any changes constitutes acceptance of those changes.
+
+
+
+                </p>
+              </div>
+              <div className="mb-6 flex flex-col items-start gap-y-3">
+                <p className="font-bold sm:text-3xl">Contact Us
+
+
+                </p>
+                <p className="text-sm sm:text-base">
+                If you have any questions about these Terms and Conditions, please contact us via the form.
+                </p>
+                <p className="text-sm sm:text-base">
+                By using our Website, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.
+
+                </p>
+              </div>
+
+              </div>
           </div>
         </section>
 
@@ -118,26 +207,26 @@ function index() {
             }
           />
           <motion.div
-      initial={{ opacity: 0, translateY: 50 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 1, ease: "easeIn" }}
-      viewport={{once:true}}
-      className=" flex items-center  gap-3   "
-    >
-      <Image
-        src={profile_pic}
-        alt="client_img"
-        width={3000}
-        height={3000}
-        quality={100}
-        className=" h-12 w-12 sm:w-16 sm:h-16 object-cover  "
-        loading="lazy"
-      />
-      <div  className=" flex flex-col gap-1.5 h-fit pt-2 ">
-        <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
-        <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
-      </div>
-    </motion.div>
+            initial={{ opacity: 0, translateY: 50 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 1, ease: "easeIn" }}
+            viewport={{ once: true }}
+            className=" flex items-center  gap-3   "
+          >
+            <Image
+              src={profile_pic}
+              alt="client_img"
+              width={3000}
+              height={3000}
+              quality={100}
+              className=" h-12 w-12 sm:w-16 sm:h-16 object-cover  "
+              loading="lazy"
+            />
+            <div className=" flex flex-col gap-1.5 h-fit pt-2 ">
+              <h2 className=" text-white font-secondary text-xs md:text-base ">Zakaria Ambari</h2>
+              <span className=" text-[#595959] capitalize ">Zœro Mathematician </span>
+            </div>
+          </motion.div>
         </div>
       </div>
     </Layout>

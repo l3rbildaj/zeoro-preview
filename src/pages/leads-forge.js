@@ -12,11 +12,15 @@ import Banner from "@/components/ui/Banner";
 import FlickerAnimation from "@/components/ui/FlickerAnimation";
 import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
+import Head from "next/head";
 
 
 function LeadsForge() {
   return (
     <Layout>
+       <Head>
+        <title>Zoero - Leads Forge</title>
+      </Head>
       <div className=" px-5 md:px-10 ">
         <div className="  flex flex-col md:flex-row md:items-end text-white  w-full ">
           <AnimatedText

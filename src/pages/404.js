@@ -1,9 +1,13 @@
 import Banner from "@/components/ui/Banner";
 import { AnimatePresence, motion } from "framer-motion";
+import Head from "next/head";
 
 function FourOFour() {
   return (
     <div className=" flex flex-col pt-20 !h-screen justify-center items-center w-full ">
+       <Head>
+        <title>Zoero - 404 </title>
+      </Head>
       <AnimatePresence>
         <motion.svg
           width="206"
